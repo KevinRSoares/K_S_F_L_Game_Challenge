@@ -12,3 +12,7 @@ Repositório Git Challenge
     Path Autocomplete for Visual Studio Code -
     JavaScript Snippet Pack for Visual Studio Code
 //
+//configurar no git bash
+(git config --global user.email "email do git") - 
+(git config --global user.name "nome de usuario do git")
+//
