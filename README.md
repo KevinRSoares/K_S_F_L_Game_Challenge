@@ -16,3 +16,5 @@ Repositório Git Challenge
 (git config --global user.email "email do git") - 
 (git config --global user.name "nome de usuario do git")
 //
+//PlayList sobre canvas e colisão
+https://www.youtube.com/playlist?list=PLclUTiUoLCbAHv7L2x4BzHdWRmhv1Hs63
