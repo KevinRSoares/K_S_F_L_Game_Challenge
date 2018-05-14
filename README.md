@@ -18,3 +18,7 @@ Repositório Git Challenge
 //
 //PlayList sobre canvas e colisão
 https://www.youtube.com/playlist?list=PLclUTiUoLCbAHv7L2x4BzHdWRmhv1Hs63
+//Paleta de Cores 
+-Principal: #6f0a90
+-Secundaria: 
+-Fontes de Fundo Branco: #3e094f
