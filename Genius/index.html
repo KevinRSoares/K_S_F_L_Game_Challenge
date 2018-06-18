@@ -9,12 +9,23 @@
 		<script src="dist/js/motor.js"></script>
 	</head>
 	<body>
+		<!--<div class="Level">
+			<h3 id='lvl'>...</h3>
+		</div>
 		<div class="container">
-			<div class="row">				  
-				<div class="col">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
 					<div id="azul" onclick='apertou(2)'> </div>
+				</div>
+				<div class="col-lg-6 col-md-6">					
 					<div id="amarelo" onclick='apertou(3)'> </div>
+				</div>					
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6">					
 					<div id="verde" onclick='apertou(1)'> </div>
+				</div>
+				<div class="col-lg-6 col-md-6">				
 					<div id="vermelho" onclick='apertou(4)'> </div>	
 				</div>
 			</div>
@@ -27,17 +38,61 @@
 
 		<button id="btn" onclick="iniciar()">INICIAR</button>
 		<h2 id='status'>....</h2>
-		<h3 id='lvl'>...</h3>
 
 		<audio id="do" src="audio/do.wav"></audio>
 		<audio id="fa" src="audio/fa.wav"></audio>
 		<audio id="la" src="audio/la.wav"></audio>
 		<audio id="mi" src="audio/mi.wav"></audio>
 		<audio id='audio2' src="audio/errou.mp3"></audio>
-		<!--button onclick="play()"> teste </button-->
+		button onclick="play()"> teste </button
 		<audio id='audio'>
 			<source src="audio/som.mp3" type="audio/mp3" >
 			<source src="audio/som.mp3" type="audio/mp3" >
-		</audio>
+		</audio>-->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-body" id='lvl'>...</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="tabuleiro">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="btn btn-primary" id="azul" onclick='apertou(2)' ></div>
+							</div>		
+							<div class="col-lg-6">
+								<div class="btn btn-warning" id="amarelo" onclick='apertou(3)'></div>
+							</div>			
+						</div>
+						<div class="row">
+							<div class="col-lg-6">	
+								<div class="btn btn-success" id="verde" onclick='apertou(1)' ></div>
+							</div>
+							<div class="col-lg-6">						
+								<div class="btn btn-danger" id="vermelho" onclick='apertou(4)' ></div>				
+							</div>							
+						</div>						
+					</div>
+				</div>
+			</div>			
+		</div>
+		<button id="btn" onclick="iniciar()">INICIAR</button>
+		<audio id="do" src="audio/do.wav"></audio>
+		<audio id="fa" src="audio/fa.wav"></audio>
+		<audio id="la" src="audio/la.wav"></audio>
+		<audio id="mi" src="audio/mi.wav"></audio>
+		<audio id='audio2' src="audio/errou.mp3"></audio>
+		<audio id='audio'>
+			<source src="audio/som.mp3" type="audio/mp3" >
+			<source src="audio/som.mp3" type="audio/mp3" >
+		</audio>-->		
+		<div id='batata'>
+				<h3 class="text" id="text1">...</h3>
+				<h3 class="text" id="text2">...</h3>
+				<h3 class="text" id="text3">...</h3>
+			</div>		
+		<h2 id='status'>....</h2>		
 	</body>
 </html>
