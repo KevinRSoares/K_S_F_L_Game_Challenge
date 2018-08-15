@@ -35,8 +35,8 @@
 	}
 	if (empty($_POST['inputDtNascimento'])) {
 		$erros['dtNas'] = 'Você deve informar sua data de nascimento';
-	}	
-	if ($_POST['inputTipUsu'] == 'on') {
+	}
+	if(isset($_POST['inputTipUsu'])){
 		$tipUsu = 'A';
 	}else{
 		$tipUsu = 'J';
@@ -57,7 +57,7 @@
         //d   corresponding variable has type double
         //s   corresponding variable has type string
         //b   corresponding variable is a blob and will be sent in packets
-        $stmt->bind_param('ssssss',$nome, $email, $nick, $senha, $dtNas, $tipUsu); // 's' especifica o tipo => 'string'
+        $stmt->bind_param('ssssss',$nome, $email, $dtNas, $nick, $senha, $tipUsu); // 's' especifica o tipo => 'string'
         $stmt->execute();
 
         if ($stmt->error) {

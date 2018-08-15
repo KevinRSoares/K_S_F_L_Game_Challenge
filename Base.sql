@@ -134,7 +134,7 @@ CREATE TABLE `usuario` (
   `NomUsu` varchar(45) NOT NULL,
   `EmaUsu` varchar(100) NOT NULL,
   `NicUsu` varchar(20) NOT NULL,
-  `SenUsu` varchar(50) NOT NULL,
+  `SenUsu` varchar(32) NOT NULL,
   `DatNasUsu` date NOT NULL,
   `DatCadUsu` datetime NOT NULL,
   `TipUsu` char(1) NOT NULL,

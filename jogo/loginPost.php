@@ -35,7 +35,7 @@
 		$email = $_POST['inputEmail'];
 		$senha = $_POST['inputSenha'];
 
-		$sql = "Select EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = ?";
+		$sql = "Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)";
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param('ss', $email, $senha); // 's' especifica o tipo => 'string'
 
@@ -53,6 +53,7 @@
 					session_start([
 					    'cookie_lifetime' => 86400,
 					]);
+					$_SESSION['codigo'] = $row["CodUsu"];
 			        $_SESSION['usuario'] = $row["EmaUsu"];
 			        $_SESSION['nome'] = $row["NomUsu"];
 			        $_SESSION['perfil'] = $row["TipUsu"];

@@ -16,14 +16,16 @@
       <div class="board">
        <?php
         include 'includes/connection.php';
-
+		$codigo = $_SESSION['codigo'];
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->connect_error) {
             die("Erro de conexão: " . $conn->connect_error);
         } 
 
-        $sql = "Select NicUsu, TotPon from Pontuacao left Join usuario using(codusu) order by TotPon";
+        $sql = "Select NicUsu, tipusu from usuario Where CodUsu = '$codigo'";
+		echo  $sql;
+		echo  $codigo;
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -35,7 +37,7 @@
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
                     <td>".$row["NicUsu"]."</td>
-                    <td>".$row["TotPon"]."</td>
+                    <td>".$row["tipusu"]."</td>
                     </tr>";
             }
             echo "</table>";
