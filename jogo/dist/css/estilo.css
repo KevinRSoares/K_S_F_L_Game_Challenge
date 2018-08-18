@@ -72,6 +72,22 @@ body {
   margin: auto;
   
 }
+.card{
+  color: #6f0a90;
+  margin-left: 1.5% !important; 
+  max-width: 45%;
+}
+/*.perfil{
+  color: #6f0a90;
+  background-color: white;
+  border: solid white 4px; 
+  border-radius: 5px;
+  max-height: 80%;
+  max-width: 80%;
+  margin-left: 10%;
+  
+}*/
+
 
 /*
  * Header
