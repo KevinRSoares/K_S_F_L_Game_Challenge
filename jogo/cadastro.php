@@ -2,7 +2,8 @@
 <html>
   <head>
     <?php 
-        include "includes/header.php";
+				include "includes/header.php";
+				
     ?>
     <title>Cadastro-Usuário</title>
     <script src="dist/js/connection/cadastrar.script.js"></script>

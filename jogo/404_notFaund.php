@@ -11,10 +11,8 @@
       <?php 
         include "includes/navbar.php";
       ?>
-    <?php 
-      include 'verificaLogin.php';
-      echo "Bem vindo {$_SESSION['nome']}! O seu email é {$_SESSION['usuario']}";
-	  ?>
+      <h1>404</h1>
+      <h1>Foi mal não encontramos a página que está procurando</h1>
       <?php 
         include "includes/footer.php";
       ?>

@@ -3,6 +3,7 @@
 	<head>
 		<?php 
 			include "includes/header.php";
+			$pagename = 'PER';			
 		?>
 		<title>Título da página</title>
 		<script src="dist/js/connection/index.script.js"></script>
