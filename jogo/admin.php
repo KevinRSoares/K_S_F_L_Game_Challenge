@@ -8,7 +8,7 @@
 	</head>
 	<body class="text-center">
 		<?php 
-			$pagename = 'ADI';
+			$nmpage = 'AD';
 			include 'verificaLogin.php';	 
 			include "includes/navbar.php";
 			include "includes/footer.php";

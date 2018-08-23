@@ -8,7 +8,7 @@
 	</head>
 	<body class="text-center">
 		<?php 
-			$pagename = 'RAN';
+			$nmpage = 'RA';
 			include 'verificaLogin.php';	
 			include "includes/navbar.php";
 		?>

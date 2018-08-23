@@ -9,6 +9,7 @@
 	</head>
 	<body onload="startGame()">
 		<?php 
+			$nmpage = 'GM';
 			include 'verificaLogin.php';	
 			include "includes/navbar.php";
 		?>
