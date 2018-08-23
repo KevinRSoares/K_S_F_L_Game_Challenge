@@ -71,7 +71,7 @@
 			<?php 
 				}
 			?>			
-			<button type="submit" class="btn btn-outline-light">Registrar</button>
+			<button type="submit" class="btn btn-outline-light" alt="Botão Registrar" title="Clique aqui para registar um novo usuário">Registrar</button>
         </form>
       </div>      
       <?php 

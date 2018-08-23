@@ -23,8 +23,8 @@
             <label>Senha</label>
             <input type="password" class="form-control" id="inputSenha" name="inputSenha" aria-describedby="Help" placeholder="Digite sua Senha">
           </div>
-          <button type="submit" class="btn btn-outline-dark">Entrar</button>
-		  <button class="btn btn-outline-dark" id="btnRegistrar" type="button">Registrar</button>
+          <button type="submit" class="btn btn-outline-dark" alt="Botão Entrar" title="Clique aqui para entrar">Entrar</button>
+		  <button class="btn btn-outline-dark" id="btnRegistrar" type="button" alt="Botão Registrar" title="Clique aqui para registrar-se">Registrar</button>
         </form>
       </div>
       <?php 
