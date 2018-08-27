@@ -75,8 +75,10 @@ body {
 .card{
   color: #6f0a90;
   margin-left: 1.5% !important; 
-  max-width: 45%;
+  max-width: 50%;
 }
+
+
 /*.perfil{
   color: #6f0a90;
   background-color: white;

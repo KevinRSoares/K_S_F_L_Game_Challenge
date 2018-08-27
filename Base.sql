@@ -4,7 +4,7 @@ USE `jogodb`;
 --
 -- Host: 127.0.0.1    Database: jogodb
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.31-MariaDB
+-- Server version	5.5.5-10.1.28-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `log` (
   `DatHorLog` datetime NOT NULL,
   `TipLog` char(1) NOT NULL,
   PRIMARY KEY (`CodLog`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `log` (
 
 LOCK TABLES `log` WRITE;
 /*!40000 ALTER TABLE `log` DISABLE KEYS */;
-INSERT INTO `log` VALUES (1,'','2018-07-15 15:44:01','W'),(2,'Email ou NickName duplicados: Email - teste01@gmail.com | NickName - NickTest01','2018-07-15 15:45:24','W'),(3,'Novo Usuario Cadastrado: NickName: NickTest01','2018-07-15 15:46:34','C'),(4,'Email ou NickName duplicados: Email - teste11@gmail.com | NickName - NickTeste01','2018-07-15 15:47:12','W'),(5,'Email ou NickName duplicados: Email - teste11@gmail.com | NickName - NickTeste01','2018-07-15 15:49:36','W'),(6,'Novo Usuario Cadastrado: NickName: NickTeste5','2018-07-15 15:49:50','C'),(7,'Novo Usuario Cadastrado: NickName: NickTeste16','2018-07-15 19:17:48','C'),(8,'Novo Usuario Cadastrado: NickName: kruan','2018-07-15 19:19:53','C'),(9,'Email ou NickName duplicados: Email - kevin@kevin.vom | NickName - kruan','2018-07-15 19:21:51','W'),(10,'Email ou NickName duplicados: Email - kevin@kevin.com | NickName - kruan','2018-07-15 19:25:38','W'),(11,'Novo Usuario Cadastrado: NickName: kruan1','2018-07-15 19:30:18','C'),(12,'Usuário 15 iniciou partida de código 5.','2018-07-15 21:55:56','P'),(13,'Partida 4 finalizada_Pausada Data/Hora: 2018-07-15 22:04:13','2018-07-15 22:04:13','P'),(14,'Partida 3 finalizada_Pausada Data/Hora: 2018-07-15 22:06:18','2018-07-15 22:06:18','P'),(15,'Usuário 10 iniciou partida de código 8.','2018-07-15 22:12:07','P'),(16,'Partida 3 Reiniciada.','2018-07-15 22:18:44','P'),(17,'Novo Usuario Cadastrado: NickName: Md5','2018-07-15 22:32:25','C'),(18,'Email ou NickName duplicados: Email - testemd5@gmail.com | NickName - md5','2018-07-15 22:32:56','W'),(19,'Usuário 10 iniciou partida de código 9.','2018-07-17 00:26:48','P'),(20,'Novo jogador inserido: KTeste','2018-07-17 00:07:26','C'),(21,'Usuário 10 iniciou partida de código 10.','2018-07-17 00:13:27','P'),(22,'Partida 8 deleteda!','2018-07-17 00:41:41','D');
+INSERT INTO `log` VALUES (30,'Novo jogador inserido: Kevin Ruan Soares','2018-08-23 18:52:36','C'),(31,'Novo jogador inserido: Felipe Becker','2018-08-23 18:53:39','C'),(32,'Novo jogador inserido: Sabrina','2018-08-23 18:59:41','C'),(33,'Usuário 41 iniciou partida de código 13.','2018-08-23 19:47:10','P'),(34,'Usuário 42 iniciou partida de código 14.','2018-08-23 19:47:19','P'),(35,'Usuário 43 iniciou partida de código 15.','2018-08-23 19:47:52','P'),(36,'Partida 13 finalizada_Pausada Data/Hora: 2018-08-23 19:48:18','2018-08-23 19:48:18','P'),(37,'Partida 14 finalizada_Pausada Data/Hora: 2018-08-23 19:48:29','2018-08-23 19:48:29','P'),(38,'Partida 15 finalizada_Pausada Data/Hora: 2018-08-23 19:48:48','2018-08-23 19:48:48','P');
 /*!40000 ALTER TABLE `log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `partida` (
   PRIMARY KEY (`CodPar`),
   KEY `usuario_partida_fk` (`CodUsu`),
   CONSTRAINT `usuario_partida_fk` FOREIGN KEY (`CodUsu`) REFERENCES `usuario` (`CodUsu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `partida` (
 
 LOCK TABLES `partida` WRITE;
 /*!40000 ALTER TABLE `partida` DISABLE KEYS */;
-INSERT INTO `partida` VALUES (0,10,'2018-07-17 00:13:27',0,NULL),(1,10,'2018-07-15 11:18:00',500,'2018-07-15 11:20:05'),(2,15,NULL,90,NULL),(3,15,'2018-07-15 22:18:44',80,NULL),(4,15,'2018-07-15 19:56:31',1000,NULL),(5,15,'2018-07-15 21:55:56',100,'2018-07-15 22:03:15'),(12,10,'2018-07-14 00:00:00',0,'2018-07-15 22:03:15');
+INSERT INTO `partida` VALUES (13,41,'2018-08-23 19:47:10',110,'2018-08-23 19:48:18'),(14,42,'2018-08-23 19:47:19',120,'2018-08-23 19:48:29'),(15,43,'2018-08-23 19:47:52',200,'2018-08-23 19:48:48');
 /*!40000 ALTER TABLE `partida` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -141,7 +141,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`CodUsu`),
   UNIQUE KEY `EmaUsu_UNIQUE` (`EmaUsu`),
   UNIQUE KEY `NicUsu_UNIQUE` (`NicUsu`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1 COMMENT='Tabela de Usuário';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1 COMMENT='Tabela de Usuário';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +150,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (10,'Teste Usuario 01','teste01@gmail.com','NickTeste01','81dc9bdb52d04dc20036','2018-03-21','0000-00-00 00:00:00','A'),(11,'Teste Usuario 02','teste02@gmail.com','NickTeste02','81dc9bdb52d04dc20036','2018-03-21','0000-00-00 00:00:00','j'),(12,'Teste Usuario 03','teste03@gmail.com','NickTeste03','81dc9bdb52d04dc20036','2018-03-21','0000-00-00 00:00:00','j'),(13,'Teste Usuario 04','teste04@gmail.com','NickTeste04','81dc9bdb52d04dc20036','2018-04-21','0000-00-00 00:00:00','j'),(14,'Teste Usuario 05','teste05@gmail.com','NickTeste05','81dc9bdb52d04dc20036','2018-05-03','0000-00-00 00:00:00','j'),(15,'Teste Usuario 06','teste06@gmail.com','NickTeste06','81dc9bdb52d04dc20036','2018-06-04','0000-00-00 00:00:00','j'),(16,'Teste Usuario 07','teste07@gmail.com','NickTeste07','81dc9bdb52d04dc20036','2018-07-05','0000-00-00 00:00:00','j'),(17,'Teste Usuario 08','teste08@gmail.com','NickTeste08','81dc9bdb52d04dc20036','2018-08-06','0000-00-00 00:00:00','j'),(26,'Teste Usuario 09','teste11@gmail.com','NickTest01','202cb962ac59075b964b','2018-02-21','2018-07-15 15:46:34','A'),(29,'Teste Usuario 09','teste12@gmail.com','NickTeste5','202cb962ac59075b964b','0000-00-00','2018-07-15 15:49:50','A'),(32,'Teste Usuario 09','teste13@gmail.com','NickTste5','202cb962ac59075b964b','0000-00-00','2018-11-21 00:00:00','A'),(33,'Teste Usuario 16','teste16@gmail.com','NickTeste16','202cb962ac59075b964b','0000-00-00','2018-07-15 19:17:48','J'),(34,'Kevin Ruan Soares','email@teste.com','kruan','202cb962ac59075b964b','2000-02-21','2018-07-15 19:19:53','J'),(37,'Kevin Ruan Soares','kevin@kevin.com','kruan1','202cb962ac59075b964b','2000-02-21','2018-07-15 19:30:18','A'),(38,'TesteMd5','testemd5@gmail.com','Md5','81dc9bdb52d04dc20036','2000-02-21','2018-07-15 22:32:25','J'),(40,'KTeste','KTeste@GMAIL.COM','KTeste','202cb962ac59075b964b','2000-02-21','2018-07-17 00:07:26','A');
+INSERT INTO `usuario` VALUES (41,'Kevin Ruan Soares','Kevin@gmail.com','KevinRSoares','202cb962ac59075b964b07152d234b70','2000-02-21','2018-08-23 18:52:36','J'),(42,'Felipe Becker','Felipe@gmail.com','FelipeB','202cb962ac59075b964b07152d234b70','1999-02-21','2018-08-23 18:53:39','J'),(43,'Sabrina','Sabrina@gmail.com','SabrinaMPutsch','202cb962ac59075b964b07152d234b70','2001-02-21','2018-08-23 18:59:41','J');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -450,4 +450,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-17  0:59:06
+-- Dump completed on 2018-08-23 19:51:52
