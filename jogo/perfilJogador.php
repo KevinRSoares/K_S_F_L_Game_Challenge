@@ -11,6 +11,8 @@
 	<body class="text-center">
 		
 				<?php 
+					$nmpage = 'PR';
+					include 'verificaLogin.php';					
 					include "includes/navbar.php";
 					$codigo = $_SESSION['codigo'];
 					include 'includes/connection.php';
@@ -59,12 +61,12 @@
 										<div class="card-header">
 										<h2>Melhores Pontos</h2>
 										</div>';
-							    // output data of each row
+								// output data of each row
+								$i = 1;
+								echo '<div class="card-body">';
 							    while($row = $result->fetch_assoc()) {
-							        echo '<div class="card-body">
-												<p class="card-text">'.$row["Ponpar"].'</p>
-							  		
-								        	';
+							        echo '<p class="card-text"> '.$i.'ª - '.$row["Ponpar"].'</p>';
+									$i++;
 							    }
 							    echo "</div>
 								</div>";

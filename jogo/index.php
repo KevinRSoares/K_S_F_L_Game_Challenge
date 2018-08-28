@@ -8,10 +8,9 @@
 	<script src="dist/js/connection/index.script.js"></script>
   </head>
   <body class="text-center">
-      <?php 
-        include "includes/navbar.php";
-      ?>
     <?php 
+      include "includes/navbar.php";
+      $nmpage = 'IN';
       include 'verificaLogin.php';
       echo "Bem vindo {$_SESSION['nome']}! O seu email é {$_SESSION['usuario']}";
 	  ?>
