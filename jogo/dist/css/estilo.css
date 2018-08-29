@@ -79,7 +79,19 @@ body {
   margin-left: 1.5% !important; 
   max-width: 50%;
 }
+.esqueci a {
+  color: #6f0a90  !important;
+  font-size: 15px !important;
+  margin-right:  80%;
+  text-decoration: none;
+}
 
+.esqueci a:hover {
+  color: #ce50f4  !important;
+  font-size: 15px !important;
+  margin-right:  80%;
+  text-decoration: none;
+}
 
 /*.perfil{
   color: #6f0a90;

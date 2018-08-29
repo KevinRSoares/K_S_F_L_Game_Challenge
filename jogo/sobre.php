@@ -16,7 +16,7 @@
                 
 
                 <b>Regras:</b>
-               <p> Para um jogador. O Genius ira dar uma sequencia de cores, onde o jogador ira realizar a mesma sequencia nos blocos coloridos, ao decorrer do jogo ira ser aumentado a dificuldade, acresentando mais cores nas sequencias. è declaraddo derrota ao jogador que não conseguir realizar a sequencia que o Genius propos,ao terminar a partida, ira ser mostrado a sua pontuação e a colocação no Ranking Geral .             
+               <p> O Genius ira dar uma sequência de cores, onde o jogador precisa realizar a mesma nos blocos coloridos, ao decorrer do jogo a dificuldade aumenta, acresentando mais cores nas sequências e é declarado derrota ao jogador que não conseguir realizar a sequência que o Genius propos. Ao terminar a partida, mostra-se sua pontuação e a colocação no Ranking Geral.             
             <p>
           
         </div>      
