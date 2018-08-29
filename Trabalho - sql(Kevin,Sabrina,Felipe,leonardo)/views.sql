@@ -1,7 +1,7 @@
 --Views
 	--Views Ranking Geral
 		Create View RankingGeral as 
-		Select NicUsu as 'NickName',max(PonPar) as 'Pontuação' from Usuario
+		Select NicUsu as 'NickName',max(PonPar) as 'Pontuacao' from Usuario
 		right Join partida using(CodUsu)
 		group by CodUsu order by max(PonPar) desc limit 10;
 	--Views Ranking Geral	

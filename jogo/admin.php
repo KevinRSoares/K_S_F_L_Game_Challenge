@@ -21,7 +21,7 @@
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<span class="input-group-text" id="inputGroup-sizing-default">Descrição</span>
-						</div>
+						</div>	
 							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 					</div>
 					</th>
