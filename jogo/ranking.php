@@ -22,9 +22,7 @@
 					die("Erro de conexão: " . $conn->connect_error);
 				} 
 
-				$sql = "Select NicUsu, tipusu from usuario Where CodUsu = '$codigo'";
-				echo  $sql;
-				echo  $codigo;
+				$sql = "Select * from rankinggeral";
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
@@ -35,8 +33,8 @@
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
 						echo	"<tr>
-									<td>".$row["NicUsu"]."</td>
-									<td>".$row["tipusu"]."</td>
+									<td>".$row["NickName"]."</td>
+									<td>".$row["Pontuacao"]."</td>
 								</tr>";
 					}
 					echo "</table>";
