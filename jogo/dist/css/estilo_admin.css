@@ -1,4 +1,6 @@
+.card ul{
+    list-style-type: none;
+}
 .card{
-    display: flex;
-    max-width: 100%;
+    
 }

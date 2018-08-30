@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php 
-      include "includes/header.php";
-    ?>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="dist/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="dist/js/util.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="dist/css/estilo.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="imagem/png" href="dist/img/drag - L4.png" />
     <title>Cadastro de jogador</title>
     <script src="dist/js/esqueci.script.js"></script>
   </head>
   <body class="text-center">
-    <?php include 'navbar.php' ?>
+
+    <?php 
+    include 'navbar.php' 
+    ?>
     <div class="text-center" style="padding-right: 30%;padding-left: 30%;">
       <div class="container-fluid">
         <div id="divMensagem"></div>

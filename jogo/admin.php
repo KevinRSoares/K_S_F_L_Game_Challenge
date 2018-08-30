@@ -13,58 +13,61 @@
 			include 'verificaLogin.php';	 
 			include "includes/navbar.php";
 		?>
-		<table class="card text-center">
-			<!--Filtros de Pesquisa-->
-			<tr class="card-header">			
+		<div class="card">
+			<div class="card-header">
 				<form id="form-Pesquisa">
-					<th>
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-default">Descrição</span>
-						</div>	
-							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-					</div>
-					</th>
-					<th>
+					<ul>
+						<li>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroup-sizing-default">Descrição</span>
+								</div>	
+									<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+							</div>
+						</li>
+						<li>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+								<span class="input-group-text" id="inputGroup-sizing-default">Data Inicial</span>
 							</div>
 							<input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 						</div>
-					</th>
-					<th>
-					<div class="input-group mb-3">
+						</li>
+						<li>
+						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+								<span class="input-group-text" id="inputGroup-sizing-default">Data Final</span>
 							</div>
 							<input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 						</div>
-					</th>
-					<th>
-					<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-							</div>
-							<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-						</div>
-					</th>	
-					<th>
+						</li>
+						<li>
 						<div class="input-group mb-3">
-							<button type="submit" class="btn btn-outline-dark" alt="Botão Filtrar" title="Clique aqui para filtrar as informações dos Logs do sistema">Filtrar</button>
-						</div>								
-					</th>							
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroup-sizing-default">Tipo</span>
+								</div>
+								<select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+									<option class="dropdown-item" value="A">Acesso</option>
+									<option class="dropdown-item" value="E">Erro</option>
+									<option class="dropdown-item" value="C">Cadastro</option>
+									<option class="dropdown-item" value="D">Deleção</option>
+									<option class="dropdown-item" value="W">Aviso</option>
+									<option class="dropdown-item" value="P">Partidas</option>
+								</select>							
+							</div>
+							<div class="input-group mb-3">
+								<button type="submit" class="btn btn-outline-dark" alt="Botão Filtrar" title="Clique aqui para filtrar as informações dos Logs do sistema">Filtrar</button>
+							</div>
+						</li>
+					<ul>																				
 				</form>
-			</tr>
-			<!--Filtros de Pesquisa-->
-			<!--Resultados de Pesquisa-->	
-			<tr calss="card-body">
-				<td><p>Teste Body</P></td>
-				<td><p>Teste Body</P></td>
-				<td><p>Teste Body</P></td>
-			</tr>						
-			<!--Resultados de Pesquisa-->
-		</table>		
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Cras justo odio</li>
+				<li class="list-group-item">Dapibus ac facilisis in</li>
+				<li class="list-group-item">Vestibulum at eros</li>
+			</ul>
+			</div>
 		<?php
 			include "includes/footer.php";
 		?>
