@@ -5,7 +5,7 @@
 	$nome = "";
 	$apelido = "";
 
-	include 'includes/connection.php';
+	include 'connection.php';
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,7 +18,7 @@
 
 	/* Validação */
 	if (empty($_POST['inputEmail'])) {
-		$erros['email'] = 'Você deve informar um email';
+		$erros['EmaUsu'] = 'Você deve informar um email';
 	}
 
 
