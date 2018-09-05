@@ -1,4 +1,4 @@
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
         <div class="inner">
             <a class="masthead-brand" href="index.php"><img src="dist/img/logo.png"></a>

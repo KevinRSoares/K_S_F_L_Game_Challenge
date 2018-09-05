@@ -21,7 +21,7 @@ a:hover {
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
   background-color:  #6f0a90;
 }
 
@@ -32,6 +32,7 @@ body {
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);  
+  min-height: 100%;
 }
 .txt-sobre{
     max-width: 50em;
