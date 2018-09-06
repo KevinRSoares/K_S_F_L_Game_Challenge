@@ -46,7 +46,6 @@ border-bottom-color: #fff;
 	color: #6f0a90;
 	font-size: 24px;
 	text-decoration: none;		
-	text-align: center;
 }
 
 .esqueci a {
@@ -61,10 +60,6 @@ border-bottom-color: #fff;
 	font-size: 15px !important;
 	margin-right:  80%;
 	text-decoration: none;
-}
-.container {
-    max-width: 940px;
-	padding-top:8%;
 }
 .formCadastro{
 	width: 100%;
