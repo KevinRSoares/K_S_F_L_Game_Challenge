@@ -38,27 +38,27 @@
 		?>
 		</h1>
 				<div id="divMensagem"></div>
-				
-        <form class='formCadastro' id="formCadastroJogador">
+		<div class='formCadastro'>		
+        <form id="formCadastroJogador">
 					
 					<div class="form-group">
-						<small id="emailHelp" class="form-text text-muted">O email será utilizado como usuário do jogo</small>
+						<small id="emailHelp" class="form-text text-muted small">O email será utilizado como usuário do jogo</small>
 						<input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Informe o seu email" >
 					</div>
 					<div class="form-group">
-						<small id="nomeHelpHelp" class="form-text text-muted">O seu nome será utilizado para motivos administrativos</small>          
+						<small id="nomeHelpHelp" class="form-text text-muted small">O seu nome será utilizado para motivos administrativos</small>          
 						<input type="text" class="form-control" id="inputNome" name="inputNome" aria-describedby="nomeHelp" placeholder="Informe o seu nome completo">
 					</div>
 					<div class="form-group">
-						<small id="apelidoHelp" class="form-text text-muted">Seu apelido será utilizado para identificar você ao jogo</small>
+						<small id="apelidoHelp" class="form-text text-muted small">Seu apelido será utilizado para identificar você ao jogo</small>
 						<input type="text" class="form-control" id="inputApelido" name="inputApelido" aria-describedby="apelidoHelp" placeholder="Informe o seu Nick de Usuário">
 					</div>
 					<div class="form-group">
-						<small id="apelidoHelp" class="form-text text-muted">Digite uma senha</small>          
+						<small id="apelidoHelp" class="form-text text-muted small">Digite uma senha</small>          
 						<input type="password" class="form-control" id="inputSenha" name="inputSenha" placeholder="Informe uma senha">
 					</div>
 					<div class="form-group">
-						<small id="apelidoHelp" class="form-text text-muted">Digite sua data de Nascimento</small>
+						<small id="apelidoHelp" class="form-text text-muted ">Digite sua data de Nascimento</small>
 						<input type="date" class="form-control" id="inputDtNascimento" name="inputDtNascimento" placeholder="Informe sua data de nascimento">
 					</div>
 					<?php 

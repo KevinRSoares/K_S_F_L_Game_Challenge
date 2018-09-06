@@ -18,13 +18,13 @@ p{
 
 
 .navbar-expand-lg .nav-link {
-	padding: .25rem 0;
-	font-weight: 700;
-	color: rgba(255, 255, 255, .5);
-	background-color: transparent;
-	border-bottom: .25rem solid transparent;
-  }
-  
+padding: .25rem 0;
+font-weight: 700;
+color: rgba(255, 255, 255, .5);
+background-color: transparent;
+border-bottom: .25rem solid transparent;
+}
+
 .navbar-expand-lg .nav-link:hover,
 .navbar-expand-lg .nav-link:focus {
 border-bottom-color: rgba(255, 255, 255, .25);
@@ -46,7 +46,7 @@ border-bottom-color: #fff;
 	color: #6f0a90;
 	font-size: 24px;
 	text-decoration: none;		
-	text-align: center;		
+	text-align: center;
 }
 
 .esqueci a {
@@ -65,4 +65,35 @@ border-bottom-color: #fff;
 .container {
     max-width: 940px;
 	padding-top:8%;
-}	
+}
+
+.formCadastro{
+	width: 100%;
+	max-width: 40em;
+	margin: auto;
+	text-align: center;
+}
+.small{
+	color: white;
+}
+.mastfoot {
+	color: rgba(255, 255, 255, .5);
+	    padding-top: 7% !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 9%;
+ 
+}
+body {
+  /* Margin bottom by footer height */
+  padding-bottom: 60px;
+}
+table{
+	  width: 100%;
+	  text-align: center;
+}

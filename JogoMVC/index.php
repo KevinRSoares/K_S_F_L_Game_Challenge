@@ -19,6 +19,10 @@
             $script = "login";
             $titulo = "Login";
             break;
+             case 'Ranking':
+            $script = "ranking";
+            $titulo = "Ranking";
+            break;
     }
 ?>
 
@@ -30,10 +34,13 @@
 		<script src="Content/js/<?php echo $script ?>.script.js"></script>
 	</head>
 	<body>
+        <div class="body">
         <?php 
             include 'Views/verificaLogin.php';
             include 'Views/navbar.php';
             include 'Views/'.$script.'.php';
+            include 'Views/footer.php';
         ?>
+        </div>
 	</body>
 </html>
