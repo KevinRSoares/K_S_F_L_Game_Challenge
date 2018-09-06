@@ -19,9 +19,19 @@
             $script = "login";
             $titulo = "Login";
             break;
-             case 'Ranking':
+
+        case 'Admin':
+            $script = "admin";
+            $titulo = "Admin";
+            break;
+        case 'Ranking':
             $script = "ranking";
             $titulo = "Ranking";
+            break;            
+
+        case 'Sobre':
+            $script = "sobre";
+            $titulo = "Sobre";
             break;
     }
 ?>

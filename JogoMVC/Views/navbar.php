@@ -16,9 +16,15 @@
 			      </li>
 			       <li class="nav-item">
 			        <a class="nav-link" href="index.php?page=Cadastrar">Cadastrar</a>
-			      </li>
+						</li>
 			      <li class="nav-item">
 			        <a class="nav-link" href="index.php?page=Ranking">Ranking</a>
+			      </li>						
+			        <li class="nav-item">
+			      	<a class="nav-link" href="index.php?page=Admin">Admin</a>
+			      </li>
+			      	<li class="nav-item">
+			        <a class="nav-link" href="index.php?page=Sobre">Sobre</a>
 			      </li>
 						<?php 
 					}

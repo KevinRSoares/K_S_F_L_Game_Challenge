@@ -18,76 +18,84 @@ p{
 
 
 .navbar-expand-lg .nav-link {
-padding: .25rem 0;
-font-weight: 700;
-color: rgba(255, 255, 255, .5);
-background-color: transparent;
-border-bottom: .25rem solid transparent;
-}
-
-.navbar-expand-lg .nav-link:hover,
-.navbar-expand-lg .nav-link:focus {
-border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.navbar-expand-lg .nav-link + .nav-link {
-margin-left: 1rem;
-}
-
-.navbar-expand-lg .active {
-color: #fff;
-border-bottom-color: #fff;
-}
-.card{
-	padding-left: 2%;
-	padding-right: 2%;
-	padding-bottom: 2%;
-	border-radius: 14px;
-	color: #6f0a90;
-	font-size: 24px;
-	text-decoration: none;		
-}
-
-.esqueci a {
-	color: #6f0a90  !important;
-	font-size: 15px !important;
-	margin-right:  80%;
-	text-decoration: none;
-}
-
-.esqueci a:hover {
-	color: #ce50f4  !important;
-	font-size: 15px !important;
-	margin-right:  80%;
-	text-decoration: none;
-}
-.formCadastro{
-	width: 100%;
-	max-width: 40em;
-	margin: auto;
-	text-align: center;
-}
-.small{
-	color: white;
-}
-.mastfoot {
+	padding: .25rem 0;
+	font-weight: 700;
 	color: rgba(255, 255, 255, .5);
-	    padding-top: 7% !important;
-}
+	background-color: transparent;
+	border-bottom: .25rem solid transparent;
+  }
+  
+  .navbar-expand-lg .nav-link:hover,
+  .navbar-expand-lg .nav-link:focus {
+	border-bottom-color: rgba(255, 255, 255, .25);
+  }
+  
+  .navbar-expand-lg .nav-link + .nav-link {
+	margin-left: 1rem;
+  }
+  
+  .navbar-expand-lg .active {
+	color: #fff;
+	border-bottom-color: #fff;
+	}
+	.card{
+		padding-left: 2%;
+		padding-right: 2%;
+		padding-bottom: 2%;
+		border-radius: 14px;
+		color: #6f0a90;
+		font-size: 24px;
+		text-decoration: none;		
+	}
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 9%;
- 
-}
-body {
-  /* Margin bottom by footer height */
-  padding-bottom: 60px;
-}
-table{
+	.esqueci a {
+		color: #6f0a90  !important;
+		font-size: 15px !important;
+		margin-right:  80%;
+		text-decoration: none;
+	}
+	
+	.esqueci a:hover {
+		color: #ce50f4  !important;
+		font-size: 15px !important;
+		margin-right:  80%;
+		text-decoration: none;
+	}
+
+	.txt-sobre{
+    	margin-top: 12%;
+    	font-size: 25px;
+		text-align: center;
+		
+
+	}
+	.formCadastro{
+		width: 100%;
+		max-width: 40em;
+		margin: auto;
+		text-align: center;
+	}
+	.small{
+		color: white;
+	}
+	.mastfoot {
+		color: rgba(255, 255, 255, .5);
+			padding-top: 7% !important;
+	}
+	
+	.footer {
+	  position: absolute;
+	  bottom: 0;
 	  width: 100%;
-	  text-align: center;
-}
+	  /* Set the fixed height of the footer here */
+	  height: 9%;
+	 
+	}
+	body {
+	  /* Margin bottom by footer height */
+	  padding-bottom: 60px;
+	}
+	table{
+		  width: 100%;
+		  text-align: center;
+	}
