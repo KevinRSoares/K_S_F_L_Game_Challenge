@@ -63,11 +63,9 @@ p{
 	}
 
 	.txt-sobre{
-    	margin-top: 12%;
+    	margin-top: 0% !important;
     	font-size: 25px;
 		text-align: center;
-		
-
 	}
 	.formCadastro{
 		width: 100%;

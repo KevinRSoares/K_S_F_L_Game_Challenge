@@ -1,5 +1,4 @@
 <div class="container">
-	
 	<div class="txt-sobre">
            <h3>Pandorah - Ano 2089</h3>
             <p>
@@ -15,6 +14,5 @@
                 <b>Regras:</b>
                <p> O Genius ira dar uma sequência de cores, onde o jogador precisa realizar a mesma nos blocos coloridos, ao decorrer do jogo a dificuldade aumenta, acresentando mais cores nas sequências e é declarado derrota ao jogador que não conseguir realizar a sequência que o Genius propos. Ao terminar a partida, mostra-se sua pontuação e a colocação no Ranking Geral.             
             </p>
-          
-        </div>
-    </div>
+	</div>
+</div>
