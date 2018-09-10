@@ -3,7 +3,7 @@
 	<h1>Cadastro de jogador</h1>
 	<div id="divMensagem"></div>
 	<div class='formCadastro'>	
-	<form class='container-fluid formulario' id="formCadastroJogador">
+	<form class='container-fluid formulario' id="formCadastroUsuario">
 		
 		<div class="form-group ">
 			<small id="emailHelp" class="form-text small">O email será utilizado como usuário do jogo</small>
@@ -26,8 +26,18 @@
 			<small id="apelidoHelp" class="form-text small">Digite uma senha</small>          
 			<input type="password" class="form-control" id="inputSenha" name="inputSenha" placeholder="Informe uma senha">
 		</div>
-
-
+		<?php
+			if(isset ($_SESSION['email']) == true and ($_SESSION['tipUsu']) == "A"){
+		?>
+			<div class="form-group">
+				<div class="custom-control custom-checkbox mr-sm-2">
+					<input type="checkbox" class="form-check-label" id="inputTipUsu" name="inputTipUsu" checked	>
+					<label class="form-check-label" for="customControlAutosizing">Administrador</label>
+				</div>  		  
+			</div>
+		<?php
+			}
+		?>
 		<button type="submit" class="btn btn-outline-light" alt="Botão Registrar" title="Clique aqui para registar um novo usuário">Registrar</button>
 		<button type="submit" class="btn btn-outline-light" alt="Botão para voltar ao login" title="Clique aqui para voltar a página de login">Login </button>
 	</form>

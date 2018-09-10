@@ -1,6 +1,6 @@
 <?php
-    include_once '../Aplicacao/JogadorAplicacao.php';
-    include_once '../Dominio/Jogador.class.php';
+    include_once '../Aplicacao/UsuarioAplicacao.php';
+    include_once '../Dominio/Usuario.class.php';
 
     $erros = array(); //Para armazenar os erros
     $form_data = array(); //Para enviar os dados de volta à página
@@ -8,8 +8,11 @@
     $erros['nome'] = "";
     $erros['email'] = "";
     $erros['senha'] = "";
+    $erros['nick'] = "";
+    $erros['dtnasc'] = "";
+    $tiUsu = "";
 
-    $aplicacao = new JogadorAplicacao();
+    $aplicacao = new UsuarioAplicacao();
 
     if (empty($_POST['operacao'])) {
 		$erros['operacao'] = 'Operacao não foi informada';
@@ -34,7 +37,7 @@
 
                 $form_data = $aplicacao->VerificaLogin($Email, $Senha);
                 break;
-            case "AdicionarJogador":
+            case "AdicionarUsuario":
                 if (empty($_POST['inputEmail'])) {
                     $erros['email'] = 'Você deve informar um email';
                 }
@@ -46,13 +49,27 @@
                 if (empty($_POST['inputNome'])) {
                     $erros['nome'] = 'Você deve informar um nome';
                 }
+                if (empty($_POST['inputApelido'])) {
+                    $erros['nick'] = 'Você deve informar um Nick';
+                }
+                if (empty($_POST['inputDtNascimento'])) {
+                    $erros['dtnasc'] = 'Você deve informar sua Data de Nascimento';
+                }
+                if(isset($_POST['inputTipUsu'])){
+                    $tiUsu = 'A';
+                }else{
+                    $tiUsu = 'J';
+                }                
             
-                $jog = new Jogador();
+                $jog = new Usuario();
                 $jog->Nome = $_POST['inputNome'];
                 $jog->Email = $_POST['inputEmail'];
                 $jog->Senha = $_POST['inputSenha'];
+                $jog->Nick = $_POST['inputApelido'];
+                $jog->DtNasc = $_POST['inputDtNascimento'];
+                $jog->TipUsu = $tiUsu;
                 
-                $form_data = $aplicacao->AdicionarJogador($jog);
+                $form_data = $aplicacao->AdicionarUsuario($jog);
                 
                 break;
         }

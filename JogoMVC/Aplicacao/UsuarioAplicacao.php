@@ -1,21 +1,22 @@
 <?php    
     require_once("Connection.class.php");
 
-    class JogadorAplicacao
+    class UsuarioAplicacao
     {    
 
-        public function AdicionarJogador($jogador)
+        public function AdicionarUsuario($Usuario)
         {
             $connection = new Connection();
             $conn = $connection->getConn();
             
-            $stmt = $conn->prepare("INSERT INTO jogador (email, senha, nome) VALUES (?, ?, ?)");
+            $stmt = $conn->prepare("call Cadastra_Usuario(?, ?, ?, ?, ?, ?)");
             //i   corresponding variable has type integer
             //d   corresponding variable has type double
             //s   corresponding variable has type string
             //b   corresponding variable is a blob and will be sent in packets
-            $stmt->bind_param('sss', $jogador->Email, $jogador->Senha, $jogador->Nome);
-             // 's' especifica o tipo => 'string'
+            $stmt->bind_param('ssssss', $Usuario->Nome, $Usuario->Email, $Usuario->DtNasc, $Usuario->Nick, $Usuario->Senha, $Usuario->TipUsu);
+            //NoUsu EmUsu DtNaUsu NiUsu SeUsu TiUsu 
+            // 's' especifica o tipo => 'string'
             $stmt->execute();
 
             if ($stmt->error) {
@@ -25,7 +26,7 @@
                 
             } else {
                 $form_data['success'] = true;
-                $form_data['posted'] = 'Jogador cadastrado com sucesso!';
+                $form_data['posted'] = 'Usuario cadastrado com sucesso!';
             }
 
             $conn->close();	
@@ -39,7 +40,8 @@
             $connection = new Connection();
             $conn = $connection->getConn();
 
-            $sql = "SELECT email, senha, nome FROM jogador where email = ? and senha = ?";
+            $sql = "SELECT EmaUsu, SenUsu, NomUsu, TipUsu FROM Usuario Where EmaUsu = ? and SenUsu = md5(?)";
+            //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('ss', $email, $senha); // 's' especifica o tipo => 'string'
 
@@ -57,9 +59,9 @@
                         session_start([
                             'cookie_lifetime' => 86400,
                         ]);
-                        $_SESSION['email'] = $row["email"];
-                        $_SESSION['nome'] = $row["nome"];
-                        
+                        $_SESSION['email'] = $row["EmaUsu"];
+                        $_SESSION['nome'] = $row["NomUsu"];
+                        $_SESSION['tipUsu'] = $row["TipUsu"];
                         
                         $form_data['success'] = true;
 
