@@ -27,7 +27,11 @@
         case 'Ranking':
             $script = "ranking";
             $titulo = "Ranking";
-            break;            
+            break;       
+        case 'Perfil':
+            $script = "perfil";
+            $titulo = "Perfil";
+            break;                        
         case 'Sobre':
             $script = "sobre";
             $titulo = "Sobre";
