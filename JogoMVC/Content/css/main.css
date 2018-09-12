@@ -40,14 +40,21 @@ p{
 	}
 	.card{
 		padding-left: 2%;
-		padding-right: 2%;
+		padding-right: 5%;
 		padding-bottom: 2%;
 		border-radius: 14px;
 		color: #6f0a90;
 		font-size: 24px;
-		text-decoration: none;		
+		text-decoration: none;	
+		margin-top: 7%;	
+		margin-bottom: 7%
 	}
 
+	.formEsqueci{
+		padding-right: 30%;
+		padding-left: 30%;
+		margin-top: 7%;
+	}
 	.esqueci a {
 		color: #6f0a90  !important;
 		font-size: 15px !important;
@@ -73,6 +80,7 @@ p{
 		margin: auto;
 		text-align: center;
 	}
+
 	.small{
 		color: white;
 	}

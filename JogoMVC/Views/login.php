@@ -10,10 +10,10 @@
             <label for="inputPassword" class="sr-only">Senha</label>
             <input type="password" id="inputSenha" name="inputSenha" class="form-control" placeholder="Senha" required>
             <div class="esqueci">
-                <a href="esqueci.php"><small id="esqueci">*Esqueci minha senha</small></a>
+                <a href="index.php?page=Esqueci"><small id="esqueci">*Esqueci minha senha</small></a>
             </div>
             <button type="submit" class="btn btn-outline-dark" alt="Botão Entrar" title="Clique aqui para entrar">Entrar</button>
-		    <button class="btn btn-outline-dark" id="btnRegistrar" type="button" alt="Botão Registrar" title="Clique aqui para registrar-se">Registrar</button>            
+            <button class="btn btn-outline-dark" id="btnRegistrar" type="button" alt="Botão Registrar" title="Clique aqui para registrar-se">Registrar</button>            
         </form>
     </div>
 </div>
