@@ -8,7 +8,7 @@
     {
         case 'Jogo':
             $script = "jogo";
-            $titulo = "Meu Jogo";
+            $titulo = "FastMind";
             break;
         case 'Cadastrar':
             $script = "cadastrar";
@@ -27,16 +27,16 @@
         case 'Ranking':
             $script = "ranking";
             $titulo = "Ranking";
-            break;           
+            break;            
         case 'Sobre':
             $script = "sobre";
             $titulo = "Sobre";
-            break;
+            break;   
         case 'Esqueci':
             $script = "esqueci";
             $titulo = "Esqueci";
-            break;
-    }
+            break;    
+        }
 ?>
 
 <!DOCTYPE html>

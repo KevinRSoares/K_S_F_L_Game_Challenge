@@ -80,7 +80,6 @@ p{
 		margin: auto;
 		text-align: center;
 	}
-
 	.small{
 		color: white;
 	}
@@ -94,9 +93,11 @@ p{
 	  bottom: 0;
 	  width: 100%;
 	  /* Set the fixed height of the footer here */
-	  height: 9%;
-	 
+	  height: 4%;
 	}
+	.footer p{
+    margin-bottom: 0rem !important;
+}
 	body {
 	  /* Margin bottom by footer height */
 	  padding-bottom: 60px;

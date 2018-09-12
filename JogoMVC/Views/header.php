@@ -5,5 +5,10 @@
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Content/css/main.css">
 <?php 
+    if($script == "jogo"){
+?>
+        <link rel="stylesheet" type="text/css" href="Content/css/jogo.css">
+<?php         
+    }
     session_start();
 ?>
