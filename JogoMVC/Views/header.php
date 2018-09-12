@@ -4,6 +4,7 @@
 <script src="Content/js/util.js"></script>
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Content/css/main.css">
+<link rel="icon" type="imagem/png" href="Content/img/Logo.png" />
 <?php 
     if($script == "jogo"){
 ?>
