@@ -31,7 +31,7 @@ $( document ).ready(function() {
 
 		//Vamos mandar a requisição
 		request = $.ajax({
-			url: "esqueciPost.php",
+			url: "Controller/EsqueciController.php",
 			type: "post",
 			data: serializedData
 		});
