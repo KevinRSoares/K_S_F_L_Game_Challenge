@@ -90,16 +90,16 @@ function play2() {
 function executarSequencia() {
     if (sequencia < ordem.length) {
         if (ordem[sequencia] == 1) {
-            dispararVerde();
+            DisparaQuadrado1();
         }
         if (ordem[sequencia] == 2) {
-            quadrado1();
+            DisparaQuadrado2();
         }
         if (ordem[sequencia] == 3) {
-            dispararAmarelo();
+            DisparaQuadrado3();
         }
         if (ordem[sequencia] == 4) {
-            dispararVermelho();
+            DisparaQuadrado4();
         }
         sequencia = sequencia + 1;
     } else {
@@ -119,61 +119,118 @@ function adicionarCor() {
 function numeroAleatorio() {
     return Math.floor(Math.random() * 9) + 1;
 }
-function quadrado1() {
-    document.getElementById('azul').style.background = ' #08d6ff';
-    document.getElementById('do').play();
-    document.getElementById("azul").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(voltarAzul, 500);
-}
-function quadrado1() {
+//Dispara cores
+function DisparaQuadrado1() {
     document.getElementById('quadrado1').style.background = ' #08d6ff';
     document.getElementById('do').play();
     document.getElementById("quadrado1").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(voltarAzul, 500);
+    setTimeout(VoltaQuadrado1, 500);
 }
-function Vol() {
-    document.getElementById('azul').style.background = 'blue';
-    document.getElementById("azul").style.boxShadow = "0 0 0px #999999";
+function DisparaQuadrado2() {
+    document.getElementById('quadrado2').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado2").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado2, 500);
+}
+function DisparaQuadrado3() {
+    document.getElementById('quadrado3').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado3").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado3, 500);
+}
+function DisparaQuadrado4() {
+    document.getElementById('quadrado4').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado4").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado4, 500);
+}
+function DisparaQuadrado5() {
+    document.getElementById('quadrado5').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado5").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado5, 500);
+}
+function DisparaQuadrado6() {
+    document.getElementById('quadrado6').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado6").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado6, 500);
+}
+function DisparaQuadrado7() {
+    document.getElementById('quadrado7').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado7").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado7, 500);
+}
+function DisparaQuadrado8() {
+    document.getElementById('quadrado8').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado8").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado8, 500);
+}
+function DisparaQuadrado9() {
+    document.getElementById('quadrado9').style.background = ' #08d6ff';
+    document.getElementById('do').play();
+    document.getElementById("quadrado9").style.boxShadow = "0px 0px 50px #2fdcff";
+    setTimeout(VoltaQuadrado9, 500);
+}
+//Dispara cores
+//Volta cores
+function VoltaQuadrado1() {
+    document.getElementById('quadrado1').style.background = ' #ffdc00';
+    document.getElementById("quadrado1").style.boxShadow = "0 0 0px #999999";
     //executarSequencia();
     setTimeout(sleep, 300);
 }
-function dispararAmarelo() {
-    document.getElementById('amarelo').style.background = ' #f8fe68 ';
-    document.getElementById('fa').play();
-    document.getElementById("amarelo").style.boxShadow = "0px 0px 50px 	#f8fe68";
-    setTimeout(voltarAmarelo, 500);
-}
-function voltarAmarelo() {
-    document.getElementById('amarelo').style.background = ' #ffdc00';
-    document.getElementById("amarelo").style.boxShadow = "0 0 0px #999999";
+function VoltaQuadrado2() {
+    document.getElementById('quadrado2').style.background = ' #ffdc00';
+    document.getElementById("quadrado2").style.boxShadow = "0 0 0px #999999";
     //executarSequencia();
     setTimeout(sleep, 300);
 }
-function dispararVerde() {
-    document.getElementById('verde').style.background = '#27ff23';
-    document.getElementById('la').play();
-    document.getElementById("verde").style.boxShadow = "0px 0px 50px #27ff23";
-    setTimeout(voltarVerde, 500);
-}
-function voltarVerde() {
-    document.getElementById('verde').style.background = 'green';
-    document.getElementById("verde").style.boxShadow = "0 0 0px #999999";
+function VoltaQuadrado3() {
+    document.getElementById('quadrado3').style.background = ' #ffdc00';
+    document.getElementById("quadrado3").style.boxShadow = "0 0 0px #999999";
     //executarSequencia();
     setTimeout(sleep, 300);
 }
-function dispararVermelho() {
-    document.getElementById('vermelho').style.background = '#ff676b';
-    document.getElementById('mi').play();
-    document.getElementById("vermelho").style.boxShadow = "0px 0px 50px #ff676b ";
-    setTimeout(voltarVermelho, 500);
-}
-function voltarVermelho() {
-    document.getElementById('vermelho').style.background = 'red';
-    document.getElementById("vermelho").style.boxShadow = "0 0 0px #999999";
+function VoltaQuadrado4() {
+    document.getElementById('quadrado4').style.background = ' #ffdc00';
+    document.getElementById("quadrado4").style.boxShadow = "0 0 0px #999999";
     //executarSequencia();
     setTimeout(sleep, 300);
 }
-
+function VoltaQuadrado5() {
+    document.getElementById('quadrado5').style.background = ' #ffdc00';
+    document.getElementById("quadrado5").style.boxShadow = "0 0 0px #999999";
+    //executarSequencia();
+    setTimeout(sleep, 300);
+}
+function VoltaQuadrado6() {
+    document.getElementById('quadrado6').style.background = ' #ffdc00';
+    document.getElementById("quadrado6").style.boxShadow = "0 0 0px #999999";
+    //executarSequencia();
+    setTimeout(sleep, 300);
+}
+function VoltaQuadrado7() {
+    document.getElementById('quadrado7').style.background = ' #ffdc00';
+    document.getElementById("quadrado7").style.boxShadow = "0 0 0px #999999";
+    //executarSequencia();
+    setTimeout(sleep, 300);
+}
+function VoltaQuadrado8() {
+    document.getElementById('quadrado8').style.background = ' #ffdc00';
+    document.getElementById("quadrado8").style.boxShadow = "0 0 0px #999999";
+    //executarSequencia();
+    setTimeout(sleep, 300);
+}
+function VoltaQuadrado9() {
+    document.getElementById('quadrado9').style.background = ' #ffdc00';
+    document.getElementById("quadrado9").style.boxShadow = "0 0 0px #999999";
+    //executarSequencia();
+    setTimeout(sleep, 300);
+}
+//Volta cores
 function sleep() {
     executarSequencia();
 }
