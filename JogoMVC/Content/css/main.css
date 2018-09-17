@@ -41,7 +41,7 @@ p {
 .card {
 	padding-left: 2%;
 	padding-right: 5%;
-	padding-bottom: 2%;
+	padding-bottom: 1%;
 	border-radius: 14px;
 	color: #6f0a90;
 	font-size: 24px;
@@ -94,7 +94,7 @@ p {
 
 .footer {
 	position: absolute;
-	bottom: 0;
+	bottom: 0%;
 	width: 100%;
 	/* Set the fixed height of the footer here */
 	height: 4%;
@@ -104,10 +104,7 @@ p {
 	margin-bottom: 0rem !important;
 }
 
-body {
-	/* Margin bottom by footer height */
-	padding-bottom: 60px;
-}
+
 
 table {
 	width: 100%;
@@ -117,5 +114,4 @@ table {
 .Perfil {
 	padding: 0%;
 	margin: 5% 0% 0% 10%;
-
 }
