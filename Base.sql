@@ -80,14 +80,22 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 trigger tr_log_delete_partida before delete
-	on partida
-	for each row
-	begin
-		declare descricao varchar(30) default "";
-		set descricao = concat("Partida ", OLD.CodPar," deleteda!");
-		
-		call insere_log(descricao,'D');
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 trigger tr_log_delete_partida before delete
+
+	on partida
+
+	for each row
+
+	begin
+
+		declare descricao varchar(30) default "";
+
+		set descricao = concat("Partida ", OLD.CodPar," deleteda!");
+
+		
+
+		call insere_log(descricao,'D');
+
 	end */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -162,16 +170,26 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 trigger tr_inseri_log_aluno before insert
-on usuario
-for each row
-begin
-	declare descricao varchar(500) default "";
-    set new.CodUsu = new.CodUsu;
-	set new.NomUsu = new.NomUsu;
-    set descricao = concat("Novo jogador inserido: ", new.NomUsu);
-    
-	call insere_log(descricao,'C');
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 trigger tr_inseri_log_aluno before insert
+
+on usuario
+
+for each row
+
+begin
+
+	declare descricao varchar(500) default "";
+
+    set new.CodUsu = new.CodUsu;
+
+	set new.NomUsu = new.NomUsu;
+
+    set descricao = concat("Novo jogador inserido: ", new.NomUsu);
+
+    
+
+	call insere_log(descricao,'C');
+
 end */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -197,11 +215,16 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `media_potuacao_j`(CoJog int) RETURNS int(11)
-BEGIN 
-	Declare MedPont int default 0;
-    Select Avg(PonPar) from Partida Where not isnull(DatHorFimPar) and CodUsu = CoJog into MedPont;
-	
-RETURN MedPont;
+BEGIN 
+
+	Declare MedPont int default 0;
+
+    Select Avg(PonPar) from Partida Where not isnull(DatHorFimPar) and CodUsu = CoJog into MedPont;
+
+	
+
+RETURN MedPont;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -218,28 +241,49 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Cadastra_Usuario`(
-IN NoUsu varchar(45),/*Nome do Usuario*/ 
-IN EmUsu varchar(100),/*Email*/ 
-IN DtNaUsu Date,/*Data de Nascimento*/ 
-IN NiUsu varchar(20),/*NickName/Login*/
-IN SeUsu varchar(20),/*Senha*/
-IN TiUsu char(1)/*Tipo de Usuário*/ 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Cadastra_Usuario`(
+
+IN NoUsu varchar(45),/*Nome do Usuario*/ 
+
+IN EmUsu varchar(100),/*Email*/ 
+
+IN DtNaUsu Date,/*Data de Nascimento*/ 
+
+IN NiUsu varchar(20),/*NickName/Login*/
+
+IN SeUsu varchar(20),/*Senha*/
+
+IN TiUsu char(1)/*Tipo de Usuário*/ 
+
 )
-BEGIN
-	Declare DtCaUsu dateTime default now();/*Data de Cadastro de Usuario*/ 
-	Declare desLog varchar(80);
-	Declare Email_Nick_duplicado condition for sqlstate '23000';
-	Declare exit handler for Email_Nick_duplicado
-	begin
-		Set desLog = concat('Email ou NickName duplicados: Email - ',EmUsu,' | NickName - ',NiUsu);
-		call insere_log(desLog,'W');
-		select 'Email ou NickName já cadastrados!';
-	End;    
-	Insert Into Usuario(NomUsu,EmaUsu,NicUsu,SenUsu,DatNasUsu,DatCadUsu,TipUsu)
-		Values(NoUsu,EmUsu,NiUsu,md5(SeUsu),DtNaUsu,DtCaUsu,TiUsu);
-		Select 'Jogador cadastrado com sucesso!';
-	
+BEGIN
+
+	Declare DtCaUsu dateTime default now();/*Data de Cadastro de Usuario*/ 
+
+	Declare desLog varchar(80);
+
+	Declare Email_Nick_duplicado condition for sqlstate '23000';
+
+	Declare exit handler for Email_Nick_duplicado
+
+	begin
+
+		Set desLog = concat('Email ou NickName duplicados: Email - ',EmUsu,' | NickName - ',NiUsu);
+
+		call insere_log(desLog,'W');
+
+		select '0'  as 'Retorno';
+
+	End;    
+
+	Insert Into Usuario(NomUsu,EmaUsu,NicUsu,SenUsu,DatNasUsu,DatCadUsu,TipUsu)
+
+		Values(NoUsu,EmUsu,NiUsu,md5(SeUsu),DtNaUsu,DtCaUsu,TiUsu);
+
+		Select '1' as 'Retorno';
+
+	
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -257,24 +301,42 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleta_partidas_abertas`()
-BEGIN
-		DECLARE done INT DEFAULT FALSE;
-		Declare CoPar int;
-        DECLARE CursorDeletar CURSOR FOR select CodPar from Partida Where DatHorIniPar < date_sub(Now(), interval 3 day) and isnull(DatHorFimPar);
-        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-		open CursorDeletar;
-		read_loop: LOOP
-			FETCH CursorDeletar INTO CoPar;
-			IF done THEN
-			  LEAVE read_loop;
-			END IF;
-
-			Delete from Partida Where CodPar = CoPar;
-
-		END LOOP;
-
-		#Fecha o cursor
-		close CursorDeletar;        
+BEGIN
+
+		DECLARE done INT DEFAULT FALSE;
+
+		Declare CoPar int;
+
+        DECLARE CursorDeletar CURSOR FOR select CodPar from Partida Where DatHorIniPar < date_sub(Now(), interval 3 day) and isnull(DatHorFimPar);
+
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+		open CursorDeletar;
+
+		read_loop: LOOP
+
+			FETCH CursorDeletar INTO CoPar;
+
+			IF done THEN
+
+			  LEAVE read_loop;
+
+			END IF;
+
+
+
+			Delete from Partida Where CodPar = CoPar;
+
+
+
+		END LOOP;
+
+
+
+		#Fecha o cursor
+
+		close CursorDeletar;        
+
 	END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -291,19 +353,31 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Finaliza_Pausa_Partida`(
-IN CoPar Int,/*Código do Usuario*/
-IN CoPon Int /*Pontuação*/
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Finaliza_Pausa_Partida`(
+
+IN CoPar Int,/*Código do Usuario*/
+
+IN CoPon Int /*Pontuação*/
+
 )
-BEGIN
-	Declare desLog varchar(80);
-    Declare DtFimPar DateTime default Now();
-	
-    Update Partida set PonPar = CoPon Where CodPar = CoPar;
-	Update Partida set DatHorFimPar = DtFimPar Where CodPar = CoPar;
-    
-    Set DesLog = Concat('Partida ',CoPar,' finalizada_Pausada Data/Hora: ',DtFimPar);
-    call insere_log(desLog,'P');    
+BEGIN
+
+	Declare desLog varchar(80);
+
+    Declare DtFimPar DateTime default Now();
+
+	
+
+    Update Partida set PonPar = CoPon Where CodPar = CoPar;
+
+	Update Partida set DatHorFimPar = DtFimPar Where CodPar = CoPar;
+
+    
+
+    Set DesLog = Concat('Partida ',CoPar,' finalizada_Pausada Data/Hora: ',DtFimPar);
+
+    call insere_log(desLog,'P');    
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -320,17 +394,27 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Inicia_Partida`(
-IN CoUsu Int,/*Código do Usuario*/
-OUT CoPar Int /*Código da Partida Iniciada*/
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Inicia_Partida`(
+
+IN CoUsu Int,/*Código do Usuario*/
+
+OUT CoPar Int /*Código da Partida Iniciada*/
+
 )
-BEGIN
-	Declare desLog varchar(80);
-	Insert Into Partida(CodUsu,DatHorIniPar)
-		Values(CoUsu,Now());
-	Select Max(CodPar) from Partida Where CodUsu = CoUsu into CoPar;
-    Set DesLog = Concat('Usuário ',CoUsu,' iniciou partida de código ', CoPar,'.');
-    call insere_log(desLog,'P');    
+BEGIN
+
+	Declare desLog varchar(80);
+
+	Insert Into Partida(CodUsu,DatHorIniPar)
+
+		Values(CoUsu,Now());
+
+	Select Max(CodPar) from Partida Where CodUsu = CoUsu into CoPar;
+
+    Set DesLog = Concat('Usuário ',CoUsu,' iniciou partida de código ', CoPar,'.');
+
+    call insere_log(desLog,'P');    
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -348,8 +432,10 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insere_log`(IN desLog varchar(80),IN tipoLog varchar(1))
-BEGIN
-	insert into log(DatHorLog, DesLog, TipLog) values(now(), deslog, tipoLog);
+BEGIN
+
+	insert into log(DatHorLog, DesLog, TipLog) values(now(), deslog, tipoLog);
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -366,19 +452,31 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Reinicia_Partida`(
-IN CoPar Int/*Código da Partida*/
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Reinicia_Partida`(
+
+IN CoPar Int/*Código da Partida*/
+
 )
-BEGIN
-	Declare desLog varchar(80);
-    Declare DtIniPar DateTime default Now();
-	
-    Update Partida set PonPar = 0 Where CodPar = CoPar;
-	Update Partida set DatHorIniPar = DtIniPar Where CodPar = CoPar;
-    Update Partida set DatHorFimPar = null Where CodPar = CoPar;
-    
-    Set DesLog = Concat('Partida ',CoPar,' Reiniciada.');
-    call insere_log(desLog,'P');    
+BEGIN
+
+	Declare desLog varchar(80);
+
+    Declare DtIniPar DateTime default Now();
+
+	
+
+    Update Partida set PonPar = 0 Where CodPar = CoPar;
+
+	Update Partida set DatHorIniPar = DtIniPar Where CodPar = CoPar;
+
+    Update Partida set DatHorFimPar = null Where CodPar = CoPar;
+
+    
+
+    Set DesLog = Concat('Partida ',CoPar,' Reiniciada.');
+
+    call insere_log(desLog,'P');    
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -396,8 +494,10 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `top10_individual`(IN codigo int)
-BEGIN
-		select Ponpar from partida where CodUsu = codigo order by Ponpar desc limit 10;
+BEGIN
+
+		select Ponpar from partida where CodUsu = codigo order by Ponpar desc limit 10;
+
 	END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;

@@ -36,32 +36,37 @@ $( document ).ready(function() {
 			type: "post",
 			data: serializedData
 		});
-
+		
 		// Callback para ser chamado quando ocorre o sucesso
 		request.done(function (response, textStatus, jqXHR){
 
 			var response = $.parseJSON(response);
-			if (!response.success) { //Se deu alguma mensagem de erro
+			console.log(response);
+			if (!response.success) { //Se deu alguma mensagem de erro				
 				if (response.erros.email) {
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.email + '</div>')
-					.fadeIn(1000).html();
-				}
-				if (response.erros.senha) {
+					.fadeIn(5000).html();
+				}if (response.erros.senha) {
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.senha + '</div>')
-					.fadeIn(1000).html();
+					.fadeIn(5000).html();
 				}
 				if (response.erros.nome) {
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.nome + '</div>')
-					.fadeIn(1000).html();
+					.fadeIn(5000).html();
 				}
 				if (response.erros.apelido) {
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.apelido + '</div>')
-					.fadeIn(1000).html();
+					.fadeIn(5000).html();
 				}
+				if(response.erros) {
+					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros + '</div>')
+					.fadeIn("slow").html();
+					$( "#divMensagem" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+				}					
 			}
 			else {
 					$('#divMensagem').append('<div class="alert alert-success" role="alert">' + response.posted + '</div>')
-					.fadeIn(1000).html();
+					.fadeIn(5000).html();
 					redirect("index.php?page=Jogo");
 			}
 		});
@@ -69,7 +74,7 @@ $( document ).ready(function() {
 		// Callback para ser chamado em caso de falha
 		request.fail(function (jqXHR, textStatus, errorThrown){
 			$('#divMensagem').append('<div class="alert alert-danger" role="alert">Erro ao enviar os dados</div>')
-					.fadeIn(1000).html();
+					.fadeIn(5000).html();
 		});
 
 		// Callback que será chamado sempre depois da requisição (mesmo que ocorra falaha ou sucesso)

@@ -25,8 +25,18 @@
                 $form_data['erros']  = $erros; 
                 
             } else {
-                $form_data['success'] = true;
-                $form_data['posted'] = 'Usuario cadastrado com sucesso!';
+                $result = $stmt->get_result();
+                if ($result->num_rows > 0) {
+                    if($row = $result->fetch_assoc()) {
+                        if($row["Retorno"] == 1){
+                            $form_data['success'] = true;
+                            $form_data['posted'] = "Usuario Cadastrado com sucesso!";
+                        }else{
+                            $form_data['success'] = false;
+                            $form_data['erros']  = "Email ou NickName já cadastrados!"; 
+                        }                        
+                    }    
+                }            
             }
 
             $conn->close();	

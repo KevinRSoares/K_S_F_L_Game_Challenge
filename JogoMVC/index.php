@@ -56,8 +56,10 @@
             include 'Views/verificaLogin.php';
             include 'Views/navbar.php';
             include 'Views/'.$script.'.php';
-            include 'Views/footer.php';
         ?>
         </div>
+        <?php
+            include 'Views/footer.php';
+        ?>        
 	</body>
 </html>

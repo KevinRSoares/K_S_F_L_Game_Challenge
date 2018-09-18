@@ -1,8 +1,8 @@
-
 <div class="container">
+	
 	<h1>Cadastro de jogador</h1>
-	<div id="divMensagem"></div>
 	<div class='formCadastro'>	
+	<div id="divMensagem"></div>
 	<form class='container-fluid formulario' id="formCadastroUsuario">
 		
 		<div class="form-group ">
