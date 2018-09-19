@@ -3,7 +3,8 @@ body {
 	color: white;
 	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 	box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-	min-height: 100vh;
+	height: 100vh;
+	min-height: 100%;
 }
 
 h1 {
@@ -47,6 +48,14 @@ p {
 	text-decoration: none;
 	margin-top: 0%;
 	margin-bottom: 2%
+}
+.ranking{
+	max-width: 90%;
+	max-height: 50%;
+	font-size: 16px;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-bottom: 0%;
 }
 
 .formEsqueci {
@@ -92,13 +101,13 @@ p {
 }
 
 .footer {
-	padding: 1%;
-	left: 0;
 	bottom: 0;
 	width: 100%;
 	text-align: center;
-}
+	position: absolute;
+	height: 4%;
 
+}
 .footer p {
 	margin-bottom: 0rem !important;
 }
