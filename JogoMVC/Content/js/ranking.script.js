@@ -58,8 +58,14 @@ $( document ).ready(function() {
 		}
 		else {
 				console.log(response);
+				k = 1;
 				for (i in response.ranking) {
-					$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td></tr>');
+					if(i >= "3" & i <= "5"){
+						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '<img class="navbar-brand" src="Content/img/lugar'+(k)+'.png" height="35px"></td></tr>');
+					}else{
+						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td></tr>');
+					}
+					k = k+1;
 				}				
 				//.fadeIn(1000).html();
 				//redirect("index.php?page=Jogo");
