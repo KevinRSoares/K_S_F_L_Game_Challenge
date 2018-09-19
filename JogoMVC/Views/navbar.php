@@ -12,26 +12,26 @@
 				{
 			?>	
 				<li class="nav-item">
-					<a class="nav-link" href="index.php?page=Login">Login</a>
+					<a class="nav-link <?php echo $login ?>" href="index.php?page=Login">Login</a>
 				</li>
 			<?php 
 			}
 			else
 			{ ?>
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Cadastrar">Cadastrar</a>
+				<a class="nav-link <?php echo $cadastro ?>" href="index.php?page=Cadastrar">Cadastrar</a>
 			</li>			
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Ranking">Ranking</a>
+				<a class="nav-link <?php echo $rankingn ?>" href="index.php?page=Ranking">Ranking</a>
 			</li>						
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Admin">Admin</a>
+				<a class="nav-link <?php echo $admin ?>" href="index.php?page=Admin">Admin</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Perfil">Perfil</a>
+				<a class="nav-link <?php echo $perfil ?>" href="index.php?page=Perfil">Perfil</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Sobre">Sobre</a>
+				<a class="nav-link <?php echo $sobre ?>" href="index.php?page=Sobre">Sobre</a>
 			</li>			
 			<li class="nav-item">
 				<a class="nav-link" href="Views/sair.php">Sair</a>

@@ -13,28 +13,34 @@
         case 'Cadastrar':
             $script = "cadastrar";
             $titulo = "Cadastro de jogador";
+            $cadastro = " active";
             break;
         case 'Login':
         default:
             $script = "login";
             $titulo = "Login";
+            $login = " active";
             break;
 
         case 'Admin':
             $script = "admin";
             $titulo = "Admin";
+            $admin = " active";
             break;
         case 'Ranking':
             $script = "ranking";
             $titulo = "Ranking";
+            $rankingn = " active";
             break;       
         case 'Perfil':
             $script = "perfil";
             $titulo = "Perfil";
+            $perfil = " active";
             break;                        
         case 'Sobre':
             $script = "sobre";
             $titulo = "Sobre";
+            $sobre = " active";
             break;   
         case 'Esqueci':
             $script = "esqueci";

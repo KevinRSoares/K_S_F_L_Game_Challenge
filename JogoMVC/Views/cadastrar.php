@@ -39,7 +39,7 @@
 			}
 		?>
 		<button type="submit" class="btn btn-outline-light" alt="Botão Registrar" title="Clique aqui para registar um novo usuário">Registrar</button>
-		<button type="submit" class="btn btn-outline-light" alt="Botão para voltar ao login" title="Clique aqui para voltar a página de login">Login </button>
+		<a  href="index.php?page=Login" class="btn btn-outline-light" alt="Botão para voltar ao login" title="Clique aqui para voltar a página de login">Login </a>
 	</form>
 </div>
 </div>
