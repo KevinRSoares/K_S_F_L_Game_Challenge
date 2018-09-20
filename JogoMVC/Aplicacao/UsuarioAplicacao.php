@@ -50,7 +50,7 @@
             $connection = new Connection();
             $conn = $connection->getConn();
 
-            $sql = "SELECT EmaUsu, SenUsu, NomUsu, TipUsu FROM Usuario Where EmaUsu = ? and SenUsu = md5(?)";
+            $sql = "SELECT * FROM Usuario Where EmaUsu = ? and SenUsu = md5(?)";
             //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('ss', $email, $senha); // 's' especifica o tipo => 'string'
@@ -69,6 +69,7 @@
                         session_start([
                             'cookie_lifetime' => 86400,
                         ]);
+                        $_SESSION['CodUsu'] = $row["CodUsu"];
                         $_SESSION['email'] = $row["EmaUsu"];
                         $_SESSION['nome'] = $row["NomUsu"];
                         $_SESSION['tipUsu'] = $row["TipUsu"];

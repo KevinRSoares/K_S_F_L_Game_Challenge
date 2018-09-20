@@ -1,11 +1,11 @@
 <?php
     class Perfil
     {
-        public $Nome;
-        public $Senha;
-        public $Email;
-        public $Nick;
-        public $DtNasc;
-        public $TipUsu;
+        public $NomeP;
+        public $NickP;
+        public $EmailP;
+        public $DtNascP;
+        public $PontP;
+
     }
 ?>

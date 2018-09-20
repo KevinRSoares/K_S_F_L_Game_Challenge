@@ -1,7 +1,7 @@
-$jog = new Usuario();
-$jog->Nome = $_POST['inputNome'];
-$jog->Email = $_POST['inputEmail'];
-$jog->Senha = $_POST['inputSenha'];
-$jog->Nick = $_POST['inputApelido'];
-$jog->DtNasc = $_POST['inputDtNascimento'];
-$jog->TipUsu = $tiUsu;
+<?php
+    include_once '../Aplicacao/PerfilAplicacao.php';
+    $form_data = array();
+    $aplicacao = new PerfilAplicacao();
+    $form_data = $aplicacao->BuscaPerfil();
+    echo json_encode($form_data);
+?>

@@ -5,7 +5,7 @@
 						<div class="card-body" id='lvl'>...</div>
 						
 					</div>
-					<button id="btn" onclick="iniciar()">INICIAR</button>
+					<button id="btn" onclick="iniciar()" alt="Botão Iniciar" title="Clique aqui para iniciar um novo jogo">INICIAR</button>
 					<div class='placar'>
 						<h3 class="text" id="text1">...</h3>
 						<h3 class="text" id="text2">...</h3>
