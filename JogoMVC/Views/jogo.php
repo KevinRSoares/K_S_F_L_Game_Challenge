@@ -10,8 +10,15 @@
 						<h3 class="text" id="text1">...</h3>
 						<h3 class="text" id="text2">...</h3>
 						<h3 class="text" id="text3">...</h3>
-					</div>		
-					<h2 id='status'>....</h2>					
+					</div>
+					
+					<h2 id='status'>....</h2>
+					<div class="fb-share-button compartilhar" data-href="http://sc.senai.br/" 
+						data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" 
+						href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
+						class="fb-xfbml-parse-ignore">Compartilhar</a>
+					</div>
+										
 				</div>
 				<div class="col-lg-8">
 					<div class="tabuleiro">
@@ -30,8 +37,11 @@
 						?>
 						
 				</div>
-			</div>			
+			</div>
+				
 		</div>
+		
+		
 		<audio id="do" src="Content/audio/do.wav"></audio>
 		<audio id="fa" src="Content/audio/fa.wav"></audio>
 		<audio id="la" src="Content/audio/la.wav"></audio>
@@ -42,3 +52,13 @@
 			<source src="audio/som.mp3" type="Content/audio/mp3" >
 		</audio>			    
 </div>
+
+
+
+
+
+<div class="fb-share-button compartilhar" data-href="http://sc.senai.br/" 
+							data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" 
+							href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
+							class="fb-xfbml-parse-ignore">Compartilhar</a>
+						</div>	

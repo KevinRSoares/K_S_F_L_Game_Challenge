@@ -113,7 +113,10 @@ p {
 	margin-bottom: 0rem !important;
 }
 
-
+.compartilhar{
+	float: left !important;
+	font-size: 20% !important;
+}
 
 table {
 	width: 100%;
