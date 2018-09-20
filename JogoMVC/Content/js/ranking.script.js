@@ -60,10 +60,10 @@ $( document ).ready(function() {
 				console.log(response);
 				k = 1;
 				for (i in response.ranking) {
-					if(i >= "0" & i <= "5"){
-						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '<img class="navbar-brand" src="Content/img/lugar'+(k)+'.png" height="35px"></td></tr>');
+					if(i >= "0" & i <= "2"){
+						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td><td><img class="navbar-brand" src="Content/img/lugar'+(k)+'.png" height="35px"></td></tr>');
 					}else{
-						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td></tr>');
+						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td><td><img class="navbar-brand" src="Content/img/lugar410.png" height="35px"></td></tr>');
 					}
 					k = k+1;
 				}				

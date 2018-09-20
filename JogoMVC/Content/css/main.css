@@ -119,6 +119,9 @@ table {
 	width: 100%;
 	text-align: center;
 }
+table td{
+	padding: .52rem !important;
+}
 
 .Perfil {
 	padding: 0%;
