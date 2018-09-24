@@ -7,7 +7,7 @@
 <script src="Content/js/facebook.js"></script>
 <link rel="stylesheet" type="text/css" href="Content/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="Content/css/main.css">
-<link rel="icon" type="imagem/png" href="Content/img/Logo.png" />
+<link rel="icon" type="imagem/png" href="Content/img/logo.png" />
 <?php 
     if($script == "jogo"){
 ?>

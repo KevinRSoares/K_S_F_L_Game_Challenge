@@ -28,7 +28,7 @@
 								echo "<div class='row'>";
 									for($j = 1;$j <= 3;$j++){
 										echo "<div class='col-lg-4'>
-												<div class='btn quadrado".$k."' id='azul' onclick='apertou(quadrado".$k.")' ></div>
+												<div class='btn quadrado".$k."' id='quadrado".$k."' onclick='apertou(".$k.")' ></div>
 											  </div>";
 										$k++;										
 									}
@@ -52,13 +52,6 @@
 			<source src="audio/som.mp3" type="Content/audio/mp3" >
 		</audio>			    
 </div>
-
-
-
-
-
-<div class="fb-share-button compartilhar" data-href="http://sc.senai.br/" 
-							data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" 
-							href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
-							class="fb-xfbml-parse-ignore">Compartilhar</a>
-						</div>	
+<!--<div class="fb-share-button compartilhar" data-href="http://sc.senai.br/" data-layout="button" data-size="large" data-mobile-iframe="false">
+	<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a>
+</div>-->	

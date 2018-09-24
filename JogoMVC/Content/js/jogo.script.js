@@ -3,7 +3,7 @@ var ranking = [];
 jogada = 0;
 sequencia = 0;
 confere = 0;
-level = 1;
+level = 50;
 podeApertar = false;
 
 function iniciar() {
@@ -26,6 +26,16 @@ function apertou(nrCor) {
             DisparaQuadrado1();
         } else if (nrCor == 4) {
             DisparaQuadrado4();
+        } else if (nrCor == 5) {
+            DisparaQuadrado5();
+        } else if (nrCor == 6) {
+            DisparaQuadrado6();
+        } else if (nrCor == 7) {
+            DisparaQuadrado7();
+        } else if (nrCor == 8) {
+            DisparaQuadrado8();
+        } else if (nrCor == 9) {
+            DisparaQuadrado9();
         }
         if (ordem[confere] == nrCor) {
             //acertou
@@ -37,36 +47,40 @@ function apertou(nrCor) {
                 play();
                 document.getElementById('status').innerHTML = 'Acertou !';
                 setTimeout(iniciar, 1400);
-                document.getElementById('lvl').innerHTML = 'Level ' + level;
-                level = level + 1;
+                document.getElementById('lvl').innerHTML = level;
+                if(nrCor%2 == 0){
+                    level = level + 50;
+                }else{
+                    level = level + 55;
+                }                
             }
         } else {
             //errououououuuu -Liga voz do Fausto Silvaa
             //document.getElementById('status').innerHTML = 'Errou!';
-            if (jogada <= 4) {
-                document.getElementById("status").innerHTML = "Baixa memória: entre 1 e 4!";
-            } if (jogada >= 5 && jogada <= 8) {
-                document.getElementById("status").innerHTML = "Memória média: entre 5 e 8!";
-            } if (jogada >= 9 && jogada <= 12) {
-                document.getElementById("status").innerHTML = "Memória alta: entre 9 e 12!";
-            } if (jogada > 12) {
-                document.getElementById("status").innerHTML = "Memória ultra: maior que 13!";
-            }
+            // if (jogada <= 4) {
+            //     document.getElementById("status").innerHTML = "Baixa memória: entre 1 e 4!";
+            // } if (jogada >= 5 && jogada <= 8) {
+            //     document.getElementById("status").innerHTML = "Memória média: entre 5 e 8!";
+            // } if (jogada >= 9 && jogada <= 12) {
+            //     document.getElementById("status").innerHTML = "Memória alta: entre 9 e 12!";
+            // } if (jogada > 12) {
+            //     document.getElementById("status").innerHTML = "Memória ultra: maior que 13!";
+            // }
 
             play2();
-            ranking[ranking.length] = level - 1;
-            ranking.sort(sortNumber);
-            ranking.reverse();
+            // ranking[ranking.length] = level - 1;
+            // ranking.sort(sortNumber);
+            // ranking.reverse();
             //ranking.rsort();
-            if (ranking.length > 0) {
-                document.getElementById('text1').innerHTML = ranking[0];
-            }
-            if (ranking.length > 1) {
-                document.getElementById('text2').innerHTML = ranking[1];
-            }
-            if (ranking.length > 2) {
-                document.getElementById('text3').innerHTML = ranking[2];
-            }
+            // if (ranking.length > 0) {
+            //     document.getElementById('text1').innerHTML = ranking[0];
+            // }
+            // if (ranking.length > 1) {
+            //     document.getElementById('text2').innerHTML = ranking[1];
+            // }
+            // if (ranking.length > 2) {
+            //     document.getElementById('text3').innerHTML = ranking[2];
+            // }
             error();
         }
     }
@@ -80,7 +94,7 @@ function error() {
     jogada = 0;
     sequencia = 0;
     confere = 0;
-    level = 1;
+    level = 0;
 
 }
 function play2() {
@@ -101,6 +115,21 @@ function executarSequencia() {
         if (ordem[sequencia] == 4) {
             DisparaQuadrado4();
         }
+        if (ordem[sequencia] == 5) {
+            DisparaQuadrado5();
+        }
+        if (ordem[sequencia] == 6) {
+            DisparaQuadrado6();
+        }
+        if (ordem[sequencia] == 7) {
+            DisparaQuadrado7();
+        }
+        if (ordem[sequencia] == 8) {
+            DisparaQuadrado8();
+        }
+        if (ordem[sequencia] == 9) {
+            DisparaQuadrado9();
+        }
         sequencia = sequencia + 1;
     } else {
         if (sequencia == 0) {
@@ -117,116 +146,116 @@ function adicionarCor() {
     jogada = jogada + 1;
 }
 function numeroAleatorio() {
-    return Math.floor(Math.random() * 4) + 1;
+    return Math.floor(Math.random() * 9) + 1;
 }
 //Dispara cores
 function DisparaQuadrado1() {
-    document.getElementById('quadrado1').style.background = '#08d6ff';
+    $("#quadrado1").css("background-color","#f8ffaa");
     document.getElementById('do').play();
-    document.getElementById("quadrado1").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado1, 500);
+    $("#quadrado1").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado1, 400);
 }
 function DisparaQuadrado2() {
-    document.getElementById('quadrado2').style.background = '#08d6ff';
+    $("#quadrado2").css("background-color","#cc5eff");
     document.getElementById('do').play();
-    document.getElementById("quadrado2").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado2, 500);
+    $("#quadrado2").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado2, 400);
 }
 function DisparaQuadrado3() {
-    document.getElementById('quadrado3').style.background = '#08d6ff';
+    $("#quadrado3").css("background-color","#907fff");
     document.getElementById('do').play();
-    document.getElementById("quadrado3").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado3, 500);
+    $("#quadrado3").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado3, 400);
 }
 function DisparaQuadrado4() {
-    document.getElementById('quadrado4').style.background = '#08d6ff';
+    $("#quadrado4").css("background-color","#61f9ba");
     document.getElementById('do').play();
-    document.getElementById("quadrado4").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado4, 500);
+    $("#quadrado4").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado4, 400);
 }
 function DisparaQuadrado5() {
-    document.getElementById('quadrado5').style.background = '#08d6ff';
+    $("#quadrado5").css("background-color","#ff6868");
     document.getElementById('do').play();
-    document.getElementById("quadrado5").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado5, 500);
+    $("#quadrado5").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado5, 400);
 }
 function DisparaQuadrado6() {
-    document.getElementById('quadrado6').style.background = '#08d6ff';
+    $("#quadrado6").css("background-color","#fffa7f");
     document.getElementById('do').play();
-    document.getElementById("quadrado6").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado6, 500);
+    $("#quadrado6").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado6, 400);
 }
 function DisparaQuadrado7() {
-    document.getElementById('quadrado7').style.background = '#08d6ff';
+    $("#quadrado7").css("background-color","#ef8453");
     document.getElementById('do').play();
-    document.getElementById("quadrado7").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado7, 500);
+    $("#quadrado7").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado7, 400);
 }
 function DisparaQuadrado8() {
-    document.getElementById('quadrado8').style.background = '#08d6ff';
+    $("#quadrado8").css("background-color","#82d0f2");
     document.getElementById('do').play();
-    document.getElementById("quadrado8").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado8, 500);
+    $("#quadrado8").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado8, 400);
 }
 function DisparaQuadrado9() {
-    document.getElementById('quadrado9').style.background = '#08d6ff';
+    $("#quadrado9").css("background-color","#83db69");
     document.getElementById('do').play();
-    document.getElementById("quadrado9").style.boxShadow = "0px 0px 50px #2fdcff";
-    setTimeout(VoltaQuadrado9, 500);
+    $("#quadrado9").css("boxShadow","0px 0px 50px #ffffff");
+    setTimeout(VoltaQuadrado9, 400);
 }
 //Dispara cores
 //Volta cores
 function VoltaQuadrado1() {
-    document.getElementById('quadrado1').style.background = '#ffdc00';
-    document.getElementById("quadrado1").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado1").css("background-color","#f8ffaa");
+    $("#quadrado1").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado2() {
-    document.getElementById('quadrado2').style.background = '#ffdc00';
-    document.getElementById("quadrado2").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado2").css("background-color","#cc5eff");
+    $("#quadrado2").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado3() {
-    document.getElementById('quadrado3').style.background = '#ffdc00';
-    document.getElementById("quadrado3").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado3").css("background-color","#907fff");
+    $("#quadrado3").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado4() {
-    document.getElementById('quadrado4').style.background = '#ffdc00';
-    document.getElementById("quadrado4").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado4").css("background-color","#61f9ba");
+    $("#quadrado4").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado5() {
-    document.getElementById('quadrado5').style.background = '#ffdc00';
-    document.getElementById("quadrado5").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado5").css("background-color","#ff6868");
+    $("#quadrado5").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado6() {
-    document.getElementById('quadrado6').style.background = '#ffdc00';
-    document.getElementById("quadrado6").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado6").css("background-color","#fffa7f");
+    $("#quadrado6").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado7() {
-    document.getElementById('quadrado7').style.background = '#ffdc00';
-    document.getElementById("quadrado7").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado7").css("background-color","#ef8453");
+    $("#quadrado7").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado8() {
-    document.getElementById('quadrado8').style.background = '#ffdc00';
-    document.getElementById("quadrado8").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado8").css("background-color","#82d0f2");
+    $("#quadrado8").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado9() {
-    document.getElementById('quadrado9').style.background = '#ffdc00';
-    document.getElementById("quadrado9").style.boxShadow = "0 0 0px #999999";
+    $("#quadrado9").css("background-color","#83db69");
+    $("#quadrado9").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
