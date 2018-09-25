@@ -75,6 +75,7 @@
                         $_SESSION['tipUsu'] = $row["TipUsu"];
                         
                         $form_data['success'] = true;
+                        $form_data['tipUsu'] = $row["TipUsu"];
 
                     }
                 } 

@@ -53,7 +53,11 @@ $( document ).ready(function() {
 			else {
 					$('#divMensagem').append('<div class="alert alert-success" role="alert">' + response.posted + '</div>')
 					.fadeIn(1000).html();
-					redirect("index.php?page=Jogo");
+					if(response.tipUsu == "A"){
+						redirect("index.php?page=Admin");	
+					}else{
+						redirect("index.php?page=Jogo");
+					}
 			}
 		});
 
