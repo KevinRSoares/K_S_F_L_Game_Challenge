@@ -1,16 +1,14 @@
 <?php
-    include_once '../Aplicacao/UsuarioAplicacao.php';
-    include_once '../Dominio/Usuario.class.php';
+    include_once '../Aplicacao/AdminAplicacao.php';
+    include_once '../Dominio/Admin.class.php';
 
     $erros = array(); //Para armazenar os erros
     $form_data = array(); //Para enviar os dados de volta à página
     
-    $erros['nome'] = "";
-    $erros['email'] = "";
-    $erros['senha'] = "";
-    $erros['nick'] = "";
-    $erros['dtnasc'] = "";
-    $tiUsu = "";
+    $erros['descricao'] = "";
+    $erros['dataIni']   = "";
+    $erros['dataFim']   = "";
+    $erros['tipLog']    = "";
 
     $aplicacao = new UsuarioAplicacao();
 
