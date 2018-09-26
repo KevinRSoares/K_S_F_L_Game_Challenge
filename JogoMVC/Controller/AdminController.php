@@ -10,68 +10,20 @@
     $erros['dataFim']   = "";
     $erros['tipLog']    = "";
 
-    $aplicacao = new UsuarioAplicacao();
+    $aplicacao = new AdminAplicacao();
 
-    if (empty($_POST['operacao'])) {
-		$erros['operacao'] = 'Operacao não foi informada';
-    }
-    else
-    {                
-        $operacao = $_POST['operacao'];
-        switch($operacao)
-        {
-            case "VerificarLogin":
-                if (empty($_POST['inputEmail'])) {
-                    $erros['email'] = 'Você deve informar um email';
-                }
-            
-                if (empty($_POST['inputSenha'])) {
-                    $erros['senha'] = 'Você deve informar uma senha';
-                }
+    //inputDescricao
+    //inputDataIni
+    //inputDataFim
+    //selectTipo               
 
-                $Senha = $_POST['inputSenha'];
-                $Email = $_POST['inputEmail'];
-
-
-                $form_data = $aplicacao->VerificaLogin($Email, $Senha);
-                break;
-            case "AdicionarUsuario":
-                if (empty($_POST['inputEmail'])) {
-                    $erros['email'] = 'Você deve informar um email';
-                }
-            
-                if (empty($_POST['inputSenha'])) {
-                    $erros['senha'] = 'Você deve informar uma senha';
-                }
-            
-                if (empty($_POST['inputNome'])) {
-                    $erros['nome'] = 'Você deve informar um nome';
-                }
-                if (empty($_POST['inputApelido'])) {
-                    $erros['nick'] = 'Você deve informar um Nick';
-                }
-                if (empty($_POST['inputDtNascimento'])) {
-                    $erros['dtnasc'] = 'Você deve informar sua Data de Nascimento';
-                }
-                if(isset($_POST['inputTipUsu'])){
-                    $tiUsu = 'A';
-                }else{
-                    $tiUsu = 'J';
-                }                
-            
-                $jog = new Usuario();
-                $jog->Nome = $_POST['inputNome'];
-                $jog->Email = $_POST['inputEmail'];
-                $jog->Senha = $_POST['inputSenha'];
-                $jog->Nick = $_POST['inputApelido'];
-                $jog->DtNasc = $_POST['inputDtNascimento'];
-                $jog->TipUsu = $tiUsu;
-                
-                $form_data = $aplicacao->AdicionarUsuario($jog);
-                
-                break;
-        }
-    }
+    $admLog = new Admin();
+    $admLog->DescA = $_POST['inputDescricao'];
+    $admLog->DtLogIniA = $_POST['inputDataIni'];
+    $admLog->DtLogFimA = $_POST['inputDataFim'];
+    $admLog->TipLogA = $_POST['inputSenha'];
+    
+    $form_data = $aplicacao->BuscarLog($admLog);
 
     if (!empty($erros)) { //Se houve erros
 		$form_data['success'] = false;

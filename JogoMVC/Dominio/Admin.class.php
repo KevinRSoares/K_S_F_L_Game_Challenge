@@ -2,7 +2,8 @@
     class Admin
     {
         public $DescA;
-        public $DtLogA;
+        public $DtLogIniA;
+        public $DtLogFimA;
         public $TipLogA;
     }
 ?>
