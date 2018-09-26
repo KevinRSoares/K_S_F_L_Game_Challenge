@@ -536,7 +536,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `relatorio_log` AS select `log`.`DesLog` AS `Descrição Log`,`log`.`DatHorLog` AS `Data e hora do Log`,`log`.`TipLog` AS `Tipo do Log` from `log` */;
+/*!50001 VIEW `relatorio_log` AS select `log`.`DesLog` AS `DescricaoLog`,`log`.`DatHorLog` AS `DthorLog`,`log`.`TipLog` AS `TipoLog` from `log` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;

@@ -8,7 +8,7 @@
             $connection = new Connection();
             $conn = $connection->getConn();
             
-            $stmt = $conn->prepare("call Cadastra_Admin(?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("Select * from rankinggeral");
             //i   corresponding variable has type integer
             //d   corresponding variable has type double
             //s   corresponding variable has type string
