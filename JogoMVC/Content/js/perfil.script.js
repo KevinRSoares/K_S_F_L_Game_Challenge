@@ -58,14 +58,11 @@ $( document ).ready(function() {
 		}
 		else {
 				console.log(response);
-				k = 1;
-				for (i in response.ranking) {
-					if(i >= "0" & i <= "2"){
-						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td><td><img class="navbar-brand" src="Content/img/lugar'+(k)+'.png" height="35px"></td></tr>');
-					}else{
-						$('#tabelaR').append('<tr><td>' + response.ranking[i].NickR + '</td><td>' + response.ranking[i].PontR + '</td><td><img class="navbar-brand" src="Content/img/lugar410.png" height="35px"></td></tr>');
-					}
-					k = k+1;
+				for (i in response.perfil) {					
+					$('#inf').append('<p class="card-text"> Nome: ' + response.perfil[i].NomeP + '</p>');
+					$('#inf').append('<p class="card-text"> Nick: ' + response.perfil[i].NickP + '</p>');
+					$('#inf').append('<p class="card-text"> Email: ' + response.perfil[i].EmailP + '</p>');
+					$('#inf').append('<p class="card-text"> Data de Nascimento: ' + response.perfil[i].DtNascP + '</p>');
 				}				
 				//.fadeIn(1000).html();
 				//redirect("index.php?page=Jogo");

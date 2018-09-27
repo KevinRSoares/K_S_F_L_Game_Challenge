@@ -7,10 +7,12 @@
 			$conn = $connection->getConn();
 			$perf = new Perfil();
 			$perfVetor = [];
+            
+            echo $usu;
 
 			$sql = "Select * from usuario where CodUsu = ?";
 			$stmt = $conn->prepare($sql);
-			$stmt->bind_param('i', );
+			$stmt->bind_param('i', $usu);
 
 			$stmt->execute();
 			if ($stmt->error) {
@@ -29,17 +31,14 @@
                         $perf->DtNascP = $row["DatNasUsu"];
                         $perfVetor[$i] = (array) $perf; 
                         $i++;
-                         echo $perf->NomeP;
                     }
 
-                    $form_data['perfil'] = $perfVetor;
-                }else{
-                	echo 'deu merda';
+                    $form_data["perfil"] = $perfVetor;
                 }
             }
             $conn->close();
-
-           
+            echo json_encode($form_data);
+            die();
 		}
 	}
 ?>
