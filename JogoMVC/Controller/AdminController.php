@@ -21,7 +21,7 @@
     $admLog->DescA = $_POST['inputDescricao'];
     $admLog->DtLogIniA = $_POST['inputDataIni'];
     $admLog->DtLogFimA = $_POST['inputDataFim'];
-    $admLog->TipLogA = $_POST['inputSenha'];
+    $admLog->TipLogA = $_POST['selectTipo'];
     
     $form_data = $aplicacao->BuscarLog($admLog);
 
