@@ -4,16 +4,16 @@
             <form id="formPesquisa">
                 <div class="form-row">
                     <div class="col-5">
-                        <input type="text" class="form-control" placeholder="Descrição" id="inputDescricao">
+                        <input type="text" class="form-control" placeholder="Descrição" id="inputDescricao" name="inputDescricao">
                     </div>
                     <div class="col-2">
-                        <input type="date" class="form-control" placeholder="Descrição" id="inputDataIni">
+                        <input type="date" class="form-control" placeholder="Descrição" id="inputDataIni" name="inputDataIni">
                     </div>
                     <div class="col-2">
-                        <input type="date" class="form-control" placeholder="Descrição" id="inputDataFim">
+                        <input type="date" class="form-control" placeholder="Descrição" id="inputDataFim" name="inputDataFim">
                     </div>                                
                     <div class="col-2">
-                        <select class="form-control"  id="selectTipo">
+                        <select class="form-control"  id="selectTipo" name="selectTipo">
                             <option value="T">Tipo</option>
                             <option value="A">Acesso</option>
                             <option value="E">Erro</option>

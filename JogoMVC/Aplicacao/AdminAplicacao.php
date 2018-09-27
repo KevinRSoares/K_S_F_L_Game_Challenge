@@ -35,14 +35,14 @@
                         $admVetor[$i] = (array) $adm; 
                         $i++;
                     }    
-                    echo json_encode($adm);
+                    $form_data["perfil"] = $admVetor;
                 }            
             }
 
             $conn->close();	
 
             echo json_encode($form_data);
-            die();
+            // die();
         }
     }
 ?>
