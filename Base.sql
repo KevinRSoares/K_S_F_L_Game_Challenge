@@ -117,14 +117,14 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `relatorio_log`
+-- Temporary view structure for view `relatorioLog`
 --
 
-DROP TABLE IF EXISTS `relatorio_log`;
-/*!50001 DROP VIEW IF EXISTS `relatorio_log`*/;
+DROP TABLE IF EXISTS `relatorioLog`;
+/*!50001 DROP VIEW IF EXISTS `relatorioLog`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `relatorio_log` AS SELECT 
+/*!50001 CREATE VIEW `relatorioLog` AS SELECT 
  1 AS `Descrição Log`,
  1 AS `Data e hora do Log`,
  1 AS `Tipo do Log`*/;
@@ -524,10 +524,10 @@ DELIMITER ;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Final view structure for view `relatorio_log`
+-- Final view structure for view `relatorioLog`
 --
 
-/*!50001 DROP VIEW IF EXISTS `relatorio_log`*/;
+/*!50001 DROP VIEW IF EXISTS `relatorioLog`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
@@ -536,7 +536,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `relatorio_log` AS select `log`.`DesLog` AS `DescricaoLog`,`log`.`DatHorLog` AS `DthorLog`,`log`.`TipLog` AS `TipoLog` from `log` */;
+/*!50001 VIEW `relatorioLog` AS select `log`.`DesLog` AS `DescricaoLog`,`log`.`DatHorLog` AS `DthorLog`,`log`.`TipLog` AS `TipoLog` from `log` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;

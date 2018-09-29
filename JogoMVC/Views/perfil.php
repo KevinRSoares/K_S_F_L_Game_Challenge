@@ -5,23 +5,15 @@
 				<h2>Informações</h2>
 			</div>
 			
-			<div class="card-body">
-				<p class="card-text">Nome: '.$nome.'</p>
-				<p class="card-text">Nick: '.$nick.'</p>
-				<p class="card-text">Email: '.$email.'</p>
-				<p class="card-text">Data de Nascimento: '.$dataNas.'</p>
+			<div class="card-body"id="inf">
+				<p class="d-none" id="CodUsu"><?php echo $_SESSION['CodUsu']?></p>
 			</div>
 		</div>
 		<div class="card text-left Perfil">
 			<div class="card-header">
 				<h2>Melhores Pontuações</h2>
 			</div>
-			<div class="card-body">
-				<p>125</p>
-				<p>150</p>
-				<p>240</p>
-				<p>125</p>
-				<p>150</p>				
+			<div class="card-body" id="Pontuacao">				
 			</div>
 		</div>
 	</div>

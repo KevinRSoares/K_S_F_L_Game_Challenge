@@ -16,18 +16,17 @@
     //inputDataIni
     //inputDataFim
     //selectTipo               
-
     $admLog = new Admin();
     $admLog->DescA = $_POST['inputDescricao'];
     $admLog->DtLogIniA = $_POST['inputDataIni'];
     $admLog->DtLogFimA = $_POST['inputDataFim'];
     $admLog->TipLogA = $_POST['selectTipo'];
     
-    $form_data = $aplicacao->BuscarLog($admLog);
+    $form_data = $aplicacao->BuscaLog($admLog);
 
     if (!empty($erros)) { //Se houve erros
-		$form_data['success'] = false;
-		$form_data['erros']  = $erros;
+		  $form_data['success'] = false;
+		  $form_data['erros']  = $erros;
     }
     
     echo json_encode($form_data);

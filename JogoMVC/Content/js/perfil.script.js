@@ -13,25 +13,15 @@ $( document ).ready(function() {
 	
 	//Limpo as mensagens
 	$("#divMensagem").empty();
-	
-	// //variáveis locais
-	// var $form = $(this);
-
-	// //Vamos selecionar e armazenar todos os cmapos do formulário para operações com eles
-	// var $inputs = $form.find("input, select, button, textarea");
 
 	// //Vamos serializar o formulário
-	// var serializedData = $form.serialize();
-	// serializedData+="&operacao=AdicionarUsuario"
-
-	// //Vamos desabilitar os inputs durante a requisição para não deicar mandar várias seguidas
-	// // // OBS: N[os desabilitamos os campos depois de serializar os dados
-	// $inputs.prop("disabled", true);
+	var serializedData = "&UsuCod="+$("#CodUsu").text();
 
 	//Vamos mandar a requisição
 	request = $.ajax({
 		url: "Controller/PerfilController.php",
-		type: "get"
+		type: "POST",
+		data: serializedData
 	});
 
 	// Callback para ser chamado quando ocorre o sucesso
@@ -39,22 +29,8 @@ $( document ).ready(function() {
 
 		var response = $.parseJSON(response);
 		if (!response.success) { //Se deu alguma mensagem de erro
-			// if (response.erros.email) {
-			// 	$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.email + '</div>')
-			// 	.fadeIn(1000).html();
-			// }
-			// if (response.erros.senha) {
-			// 	$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.senha + '</div>')
-			// 	.fadeIn(1000).html();
-			// }
-			// if (response.erros.nome) {
-			// 	$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.nome + '</div>')
-			// 	.fadeIn(1000).html();
-			// }
-			// if (response.erros.apelido) {
-			// 	$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.apelido + '</div>')
-			// 	.fadeIn(1000).html();
-			// }
+				$('#divMensagem').append('<div class="alert alert-danger" role="alert">Error ao Trazer Informações do usuário!</div>')
+				.fadeIn(1000).html();
 		}
 		else {
 				console.log(response);
@@ -63,7 +39,10 @@ $( document ).ready(function() {
 					$('#inf').append('<p class="card-text"> Nick: ' + response.perfil[i].NickP + '</p>');
 					$('#inf').append('<p class="card-text"> Email: ' + response.perfil[i].EmailP + '</p>');
 					$('#inf').append('<p class="card-text"> Data de Nascimento: ' + response.perfil[i].DtNascP + '</p>');
-				}				
+				}	
+				for (i in response.pontuacao) {					
+					$('#Pontuacao').append('<p>' + response.pontuacao[i] + '</p>');
+				}							
 				//.fadeIn(1000).html();
 				//redirect("index.php?page=Jogo");
 		}

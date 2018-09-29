@@ -1,48 +1,40 @@
-<?php    
+<?php
     require_once("Connection.class.php");
-
-    class AdminAplicacao
-    {    
-        public function BuscarLog($Admin)
-        {
+    include_once '../Dominio/Admin.class.php';
+    class AdminAplicacao{
+        public function BuscaLog($admLog){
             $connection = new Connection();
             $conn = $connection->getConn();
             $adm = new Admin();
-            $admVetor = [];            
+            $admVetor = [];
             
-            $stmt = $conn->prepare("Select * from relatorio_log");
-            //i   corresponding variable has type integer
-            //d   corresponding variable has type double
-            //s   corresponding variable has type string
-            //b   corresponding variable is a blob and will be sent in packets
-            //$stmt->bind_param('ssssss', $Admin->Nome, $Admin->Email, $Admin->DtNasc, $Admin->Nick, $Admin->Senha, $Admin->TipUsu);
-            //NoUsu EmUsu DtNaUsu NiUsu SeUsu TiUsu 
-            // 's' especifica o tipo => 'string'
+            $sql = "Select * from log";
+            //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
+            $stmt = $conn->prepare($sql);
             $stmt->execute();
-
             if ($stmt->error) {
                 $form_data['success'] = false;
-                $form_data['erros']  = $erros.'-'.$conn->error; 
+                $form_data['erros']  = $erros; 
                 
             } else {
                 $result = $stmt->get_result();
                 if ($result->num_rows > 0) {
                     $i = 0;
                     while($row = $result->fetch_assoc()) {
-                        $adm->DescA = $row["DescricaoLog"];
-                        $adm->DtLogIniA = $row["DthorLog"];
-                        $adm->TipLogA = $row["TipoLog"];
+                        $form_data['success'] = true;
+                        $adm->DescA = $row["DesLog"];
+                        $adm->DtLogIniA = $row["DatHorLog"];
+                        $adm->TipLogA = $row["TipLog"];
                         $admVetor[$i] = (array) $adm; 
                         $i++;
-                    }    
-                    $form_data["perfil"] = $admVetor;
-                }            
+                    }
+                    $form_data["Admin"] = $admVetor;
+                }
             }
-
             $conn->close();	
 
             echo json_encode($form_data);
-            // die();
+            //die();
         }
-    }
+    }  
 ?>
