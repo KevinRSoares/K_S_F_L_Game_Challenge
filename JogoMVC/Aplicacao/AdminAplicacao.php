@@ -27,7 +27,7 @@
                         $adm->DtLogIniA = date('d/m/Y', strtotime($row["DatHorLog"]));
                         $adm->TipLogA = $row["TipLog"];
                         $admVetor[$i] = $adm;
-                        echo json_encode($admVetor[$i]);
+                        //echo json_encode($admVetor[$i]);
                         $i++;
                     }
                     $form_data["Admin"] = $admVetor;
@@ -35,7 +35,7 @@
             }
             $conn->close();	
 
-            //echo json_encode($form_data);
+            echo json_encode($form_data);
             die();
         }
     }  
