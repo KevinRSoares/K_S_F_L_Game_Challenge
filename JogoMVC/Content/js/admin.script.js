@@ -46,19 +46,21 @@ $( document ).ready(function() {
 				}
 			}
 			else {
-					$('#divMensagem').append('<div class="alert alert-success" role="alert">' + response.posted + '</div>')
-					.fadeIn(1000).html();
-					if(response.tipUsu == "A"){
-						redirect("index.php?page=Admin");	
-					}else{
-						redirect("index.php?page=Jogo");
-					}
+				console.log(response);
+				for (i in response.Admin) {
+					$('#tabelaA').append('<tr><td class="col-5 text-Left">' + response.Admin[i].DescA + '</td><td class="col-2">' + response.Admin[i].DtLogIniA + '</td><td class="col-2 text-right">' + response.Admin[i].TipLogA + '</td></tr>');
+				}		
+				// <tr>
+                //     <td class="col-3 text-left">Teste</td>
+                //     <td class="col-2">Teste</td>
+                //     <td class="col-2 text-right">Teste</td>
+                // </tr>		
 			}
 		});
 
 		// Callback para ser chamado em caso de falha
 		request.fail(function (jqXHR, textStatus, errorThrown){
-			$('#divMensagem').append('<div class="alert alert-danger" role="alert">Erro ao enviar os dados</div>')
+			$('#divMensagem').append('<div class="alert alert-danger" role="alert">Erro ao buscar os dados</div>')
 					.fadeIn(1000).html();
 		});
 

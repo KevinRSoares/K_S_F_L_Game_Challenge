@@ -1,4 +1,4 @@
-<div class="container">
+    <div class="container">
     <div class="card admin">
         <div class="card-header">
             <form id="formPesquisa">
@@ -26,6 +26,12 @@
                     <button type="submit" class="btn btn-outline-dark" alt="Botão Filtrar" title="Clique aqui para filtrar as informações dos Logs do sistema">Filtrar</button>
                 </div>
             </form>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+            <table class='table' id='tabelaA'>
+            </table>
+            </div>
         </div>
     </div>
 </div>

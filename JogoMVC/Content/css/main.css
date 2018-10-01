@@ -63,7 +63,9 @@ p {
 	padding-left: 30%;
 	margin-top: 7%;
 }
-
+.formEsqueci input {
+	margin-bottom: 1%;
+}
 .esqueci a {
 	color: #6f0a90 !important;
 	font-size: 15px !important;
@@ -134,4 +136,6 @@ table td{
 .admin{
 	padding-left: 0%;
 	padding-right: 0%;
+	font-size: 16px;
 }
+

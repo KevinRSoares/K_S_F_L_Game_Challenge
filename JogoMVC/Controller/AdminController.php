@@ -25,8 +25,8 @@
     $form_data = $aplicacao->BuscaLog($admLog);
 
     if (!empty($erros)) { //Se houve erros
-		  $form_data['success'] = false;
-		  $form_data['erros']  = $erros;
+		$form_data['success'] = false;
+		$form_data['erros']  = $erros;
     }
     
     echo json_encode($form_data);
