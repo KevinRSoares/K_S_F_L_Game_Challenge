@@ -19,10 +19,12 @@
             
             } else {
                 $result = $stmt->get_result();
+                echo json_encode($result);
                 if ($result->num_rows > 0) {
                     $i = 0;
                     while($row = $result->fetch_assoc()) {
                         $form_data['success'] = true;
+                        $adm = new Admin();
                         $adm->DescA = $row["DesLog"];
                         $adm->DtLogIniA = date('d/m/Y', strtotime($row["DatHorLog"]));
                         $adm->TipLogA = $row["TipLog"];
@@ -35,7 +37,7 @@
             }
             $conn->close();	
 
-            echo json_encode($form_data);
+            //echo json_encode($form_data);
             die();
         }
     }  
