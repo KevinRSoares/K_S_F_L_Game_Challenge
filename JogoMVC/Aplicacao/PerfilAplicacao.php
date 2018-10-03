@@ -35,7 +35,7 @@
                 }
             }
             $conn->close();
-            $form_data = $form_data +$this->BuscaPontuacao($UsuCod);
+            $form_data = $form_data + $this->BuscaPontuacao($UsuCod);
             echo json_encode($form_data);
             die();
         }
@@ -63,6 +63,8 @@
                     }
 
                     $form_data["pontuacao"] = $pontVetor;
+                }else{
+                    $form_data["pontuacao"] = null;
                 }
             }
             $conn->close();
