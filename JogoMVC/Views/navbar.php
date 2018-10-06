@@ -6,6 +6,9 @@
 			{
 				echo "?page=Admin";
 			}
+			else{ 
+				echo "?page=Jogo";
+			}
 		?>		
 		"><img src="Content/img/Logo.png" height="35px"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +49,10 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?php echo $sobre ?>" href="index.php?page=Sobre">Sobre</a>
-				</li>			
+				</li>	
+				<li class="nav-item">
+					<a class="nav-link <?php echo $rankingn ?>" href="index.php?page=Jogo">Jogo</a>
+				</li>		
 				<?php 
 				}
 				?>

@@ -15,7 +15,7 @@ include_once '../Dominio/Esqueci.class.php';
         $erros['email']  = 'Email não informado';
     }else{
         $esq = new Esqueci();
-        $esq->EmailE = "kevin_soares@estudante.sc.senai.br";//$_POST['inputEmail'];
+        $esq->EmailE = $_POST['inputEmail'];
         $form_data = $aplicacao->EnviaEmail($esq);
     }  
     echo json_encode($form_data);

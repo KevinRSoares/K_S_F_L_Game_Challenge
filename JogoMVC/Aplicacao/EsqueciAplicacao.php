@@ -59,13 +59,13 @@ class EsqueciAplicacao{
 		$mail->SMTPSecure = 'ssl';
 
 		$mail->SMTPAuth = true; 
-		$mail->Username = 'email@gmail.com'; // Email do Usuário
-		$mail->Password = 'senha'; // Senha do Gmail
+		$mail->Username = 'fastmnd@gmail.com'; // Email do Usuário
+		$mail->Password = 'fastmind20'; // Senha do Gmail
 
 		$mail->SingleTo = true; 
 
 
-		$mail->From = 'email@gmail.com'; 
+		$mail->From = 'fastmnd@gmail.com'; 
 		$mail->FromName = "JOGO - Recuperação de Senha";
 
 		$mail->addAddress($Email);
