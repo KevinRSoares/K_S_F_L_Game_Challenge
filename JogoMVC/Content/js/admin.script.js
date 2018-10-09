@@ -48,8 +48,11 @@ $( document ).ready(function() {
 			else {
 				console.log(response);
 				for (i in response.Admin) {
-					$('#tabelaA').append('<tr><td class="col-5 text-Left">' + response.Admin[i].DescA + '</td><td class="col-2">' + response.Admin[i].DtLogIniA + '</td><td class="col-2 text-right">' + response.Admin[i].TipLogA + '</td></tr>');
-				}		
+					if(i<9){
+						$('#tabelaA').append('<tr><td class="col-3 text-Left">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-1 text-left">' + response.Admin[i].TipLogA + '</td></tr>');
+					}
+				}	
+				$('#tabelaB').append('<nav aria-label="Navegação de página exemplo">  <ul class="pagination">    <li class="page-item">      <a class="page-link" href="#" aria-label="Anterior">        <span aria-hidden"true">&laquo;</span>        <span class="sr-only">Anterior</span>      </a>    </li>    <li class="page-item"><a class="page-link" href="#">1</a></li>    <li class="page-item"><aclas="page-link" href="#">2</a></li>    <li class="page-item"><a class="page-link" href="#">3</a></li>    <li class="page-item">      <a class="page-link" href="#" aria-label="Próximo">        <span aria-hidden="true">&raquo;</span>        <span class="sr-only">Próximo</span>      </a>    </li>  </ul></nav>');	
 				// <tr>
                 //     <td class="col-3 text-left">Teste</td>
                 //     <td class="col-2">Teste</td>

@@ -28,9 +28,9 @@
             </form>
         </div>
         <div class="card-body">
-            <div class="form-row">
-            <table class='table' id='tabelaA'>
-            </table>
+            <div class="form-row" id='tabelaB'>
+                <table class='table' id='tabelaA'>
+                </table>
             </div>
         </div>
     </div>
