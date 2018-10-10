@@ -9,6 +9,7 @@
         case 'Jogo':
             $script = "jogo";
             $titulo = "FastMind";
+            $jogo = " active";
             break;
         case 'Cadastrar':
             $script = "cadastrar";

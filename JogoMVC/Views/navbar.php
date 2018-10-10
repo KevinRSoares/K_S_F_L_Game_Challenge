@@ -51,7 +51,7 @@
 					<a class="nav-link <?php echo $sobre ?>" href="index.php?page=Sobre">Sobre</a>
 				</li>	
 				<li class="nav-item">
-					<a class="nav-link <?php echo $rankingn ?>" href="index.php?page=Jogo">Jogo</a>
+					<a class="nav-link <?php echo $jogo ?>" href="index.php?page=Jogo">Jogo</a>
 				</li>		
 				<?php 
 				}

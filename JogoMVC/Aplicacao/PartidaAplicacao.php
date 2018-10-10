@@ -2,16 +2,16 @@
     require_once("Connection.class.php");
     include_once '../Dominio/Partida.class.php';
     class PartidaAplicacao{
-        public function GravaPartida(){
+        public function GravaPartida($UsuCod){
             $connection = new Connection();
             $conn = $connection->getConn();
-            $ran = new Ranking();
-            $ranVetor = [];
-            
+            $Partida = new Partida();
             //$sql = "";
-            $sql = "Select * from rankinggeral";
+            $sql = "call Inicia_Partida(?)";
             //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
             $stmt = $conn->prepare($sql);
+            $stmt->bind_param('i', $UsuCod);
+            
             $stmt->execute();
             if ($stmt->error) {
                 $form_data['success'] = false;
@@ -23,20 +23,17 @@
                     $i = 0;
                     while($row = $result->fetch_assoc()) {
                         $form_data['success'] = true;
-                        $ran->NickR = $row["NickName"];
-                        $ran->PontR = $row["Pontuacao"];
-                        $ranVetor[$i] = (array) $ran; 
-                        $i++;
+                        $Partida->PartidaP = $row["CoPar"];
                     }
-                    $form_data["ranking"] = $ranVetor;
+                    $form_data["Partida"] = $Partida;
+                    echo json_encode($Partida);
                 } 
                 else
                 {
-                    $erros['email'] = 'usuário ou senha inválidos';
                     $form_data['success'] = false;
                     $form_data['erros']  = $erros;
                 }
-            }
+            }            
             $conn->close();	
 
             echo json_encode($form_data);

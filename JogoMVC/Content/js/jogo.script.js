@@ -1,6 +1,7 @@
 var ordem = [];
 var ranking = [];
 var request;
+var Partida = 0;
 jogada = 0;
 sequencia = 0;
 confere = 0;
@@ -21,9 +22,11 @@ function gravaPartida(){
     if (request) {
         request.abort();
     }
+    var serializedData = "&UsuCod="+$("#CodUsu").text();
     request = $.ajax({
-        url: "Controller/AdminController.php",
-        type: "get"
+        url: "Controller/PartidaController.php",
+        type: "post",
+        data: serializedData
     });
     request.done(function (response, textStatus, jqXHR){
         var response = $.parseJSON(response);
