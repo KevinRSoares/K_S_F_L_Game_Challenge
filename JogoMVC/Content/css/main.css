@@ -138,4 +138,18 @@ table td{
 	padding-right: 0%;
 	font-size: 16px;
 }
+.pagination a{
+	color: #6f0a90;
+	text-decoration:  none;
+}
+.logs td, tr{
+text-align: center;
+}
+.logs td{
+	width: 60rem;
+}
+.pagination nav{
+	float: right;
+}
+
 
