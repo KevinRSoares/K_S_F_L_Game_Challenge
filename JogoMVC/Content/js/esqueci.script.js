@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 		//Não deixa que o POST default seja acionado
 		event.preventDefault();
-
+		
 		//Cancelando qualquer request pendente
 		if (request) {
 			request.abort();
@@ -28,7 +28,6 @@ $( document ).ready(function() {
 		//Vamos desabilitar os inputs durante a requisição para não deicar mandar várias seguidas
 		// OBS: N[os desabilitamos os campos depois de serializar os dados
 		$inputs.prop("disabled", true);
-
 		//Vamos mandar a requisição
 		request = $.ajax({
 			url: "Controller/EsqueciController.php",
@@ -49,6 +48,7 @@ $( document ).ready(function() {
 					$('#divMensagem').append('<div class="alert alert-success" role="alert">' + response.posted + '</div>')
 					.fadeIn(1000).html();
 			}
+			
 		});
 
 		// Callback para ser chamado em caso de falha
@@ -61,7 +61,18 @@ $( document ).ready(function() {
 		request.always(function () {
 			//Habilitamos os campos
 			$inputs.prop("disabled", false);
+
 		});
+		$("#exampleModal").modal();
 
 	});
+	$('#exampleModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget) // Button that triggered the modal
+		var recipient = button.data('whatever') // Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('New message to ' + recipient)
+		modal.find('.modal-body input').val(recipient)
+	  })
 });

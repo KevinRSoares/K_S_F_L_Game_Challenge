@@ -130,7 +130,8 @@ table td{
 
 .Perfil {
 	padding: 0%;
-	margin: 5% 0% 0% 10%;
+	margin: 2% 0% 0% 10%;
+	font-size: 100%;
 }
 
 .admin{
@@ -151,5 +152,6 @@ text-align: center;
 .pagination nav{
 	float: right;
 }
-
-
+.teste{
+	color: #6f0a90;
+}

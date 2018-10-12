@@ -8,7 +8,6 @@
 					<button class="btn-outline-light btnComando"  onclick="iniciar()" alt="Botão Iniciar" title="Clique aqui para iniciar um novo jogo">Iniciar</button>
 					<button class="btn-outline-light btnComando" id="btnPause" alt="Botão Pausar" title="Clique aqui para pausar o jogo">Pausar</button>
 					<button class="btn-outline-light btnComando" id="btnReinicia" alt="Botão Reiniciar" title="Clique aqui para reiniciar o jogo">Reiniciar</button>
-					<p class="d-none" id="CodUsu"><?php echo $_SESSION['CodUsu']?></p>
 					<div class='placar'>
 						<h3 class="text" id="text1">...</h3>
 						<h3 class="text" id="text2">...</h3>
@@ -16,7 +15,7 @@
 					</div>
 					
 					<h2 id='status'>....</h2>
-					<div class="fb-share-button compartilhar" data-href="http://sc.senai.br/" 
+					<div class="fb-share-button compartilhar" data-href="COLOCAR LINK DO NOSSO SITE" 
 						data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" 
 						href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
 						class="fb-xfbml-parse-ignore">Compartilhar</a>
