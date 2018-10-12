@@ -43,26 +43,10 @@ $( document ).ready(function() {
 			var response = $.parseJSON(response);
 			console.log(response);
 			if (!response.success) { //Se deu alguma mensagem de erro				
-				if (response.erros.email) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.email + '</div>')
+				if (response.erros.campos) {
+					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.campos + '</div>')
 					.fadeIn(5000).html();
-				}if (response.erros.senha) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.senha + '</div>')
-					.fadeIn(5000).html();
-				}
-				if (response.erros.nome) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.nome + '</div>')
-					.fadeIn(5000).html();
-				}
-				if (response.erros.apelido) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.apelido + '</div>')
-					.fadeIn(5000).html();
-				}
-				if(response.erros) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros + '</div>')
-					.fadeIn("slow").html();
-					$( "#divMensagem" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
-				}					
+				}				
 			}
 			else {
 					$('#divMensagem').append('<div class="alert alert-success" role="alert">' + response.posted + '</div>')
