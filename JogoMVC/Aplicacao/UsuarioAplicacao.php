@@ -78,6 +78,7 @@
                         $form_data['tipUsu'] = $row["TipUsu"];
 
                     }
+                    $form_data['posted'] = "Login efetuado com sucesso!";
                 } 
                 else
                 {
