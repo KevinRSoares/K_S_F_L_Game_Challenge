@@ -11,6 +11,7 @@
 			}
 		?>		
 		"><img src="Content/img/Logo.png" height="35px"></a>
+		<p class="d-none" id="CodUsu"><?php echo $_SESSION['CodUsu']?></p>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
