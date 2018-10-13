@@ -6,7 +6,7 @@ var CodPar = 0;
 jogada = 0;
 sequencia = 0;
 confere = 0;
-level = 50;
+level = 0;
 podeApertar = false;
 
 function iniciar() {
@@ -93,12 +93,12 @@ function apertou(nrCor) {
                 play();
                 document.getElementById('status').innerHTML = 'Acertou !';
                 setTimeout(iniciar, 1400);
-                document.getElementById('lvl').innerHTML = level;
                 if(nrCor%2 == 0){
                     level = level + 50;
                 }else{
                     level = level + 55;
-                }                
+                }
+                document.getElementById('lvl').innerHTML = level;           
             }
         } else {
             //errououououuuu -Liga voz do Fausto Silvaa
