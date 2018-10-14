@@ -1,3 +1,8 @@
+$( document ).ready(function() {
+    $('#pause').prop("disabled", true);
+    $('#reiniciar').prop("disabled", true);    
+    $("#facebook").hide();
+});
 var ordem = [];
 var ranking = [];
 var request;
@@ -6,18 +11,33 @@ var CodPar = 0;
 jogada = 0;
 sequencia = 0;
 confere = 0;
-level = 50;
+level = 0;
 podeApertar = false;
+estapausado = false;
+reiniciei = false;
 
 function iniciar() {
+    setbuttons(0);   
     podeApertar = false;
-    sequencia = 0;
-    PartidaGPF('G');
-    adicionarCor();
+    
+    if(estapausado == false && reiniciei == false){
+        PartidaGPF('G');
+        sequencia = 0;
+        adicionarCor();
+    }else{
+        if(reiniciei == true){
+            reiniciei = false;
+            sequencia = 0;
+            adicionarCor();
+        }else{        
+            sequencia = 0;
+            estapausado = false;
+        }
+    }
     executarSequencia();
-    //document.getElementById('btn').innerHTML = 'Jogue';
-    document.getElementById('status').innerHTML = '...';
-    document.getElementById('btn').style.visibility = 'hidden';
+    $('#status').text('...');
+    $('#btn').hide();
+    $("#facebook").hide();
 }
 function PartidaGPF(tipOpe){
     if (request) {
@@ -32,8 +52,8 @@ function PartidaGPF(tipOpe){
     request.done(function (response, textStatus, jqXHR){
         var response = $.parseJSON(response);
         if (!response.success) { //Se deu alguma mensagem de erro
-            if (response.erros.email) {
-                $('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.email + '</div>')
+            if (response.erros) {
+                $('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros+ '</div>')
                 .fadeIn(1000).html();
             }
         }
@@ -48,14 +68,8 @@ function PartidaGPF(tipOpe){
     // Callback para ser chamado em caso de falha
     request.fail(function (jqXHR, textStatus, errorThrown){
         $('#divMensagem').append('<div class="alert alert-danger" role="alert">Erro ao buscar os dados</div>')
-                .fadeIn(1000).html();
-    });
-
-    // Callback que será chamado sempre depois da requisição (mesmo que ocorra falaha ou sucesso)
-    request.always(function () {
-        //Habilitamos os campos
-        $inputs.prop("disabled", false);
-    });    
+            .fadeIn(1000).html();
+    });  
 }
 
 //var serializedData = "&UsuCod="+$("#CodUsu").text()+"&ParPon="+Partida;
@@ -63,7 +77,7 @@ function PartidaGPF(tipOpe){
 
 
 function apertou(nrCor) {
-    if (podeApertar) {
+    if (podeApertar == true && estapausado == false) {
         if (nrCor == 2) {
             DisparaQuadrado2();
         } else if (nrCor == 3) {
@@ -88,92 +102,97 @@ function apertou(nrCor) {
             confere = confere + 1;
             if (confere == ordem.length) {
                 confere = 0;
-                //document.getElementById('btn').style.visibility = 'visible';
-                //document.getElementById('btn').innerHTML = 'Continue';
                 play();
-                document.getElementById('status').innerHTML = 'Acertou !';
                 setTimeout(iniciar, 1400);
-                document.getElementById('lvl').innerHTML = level;
                 if(nrCor%2 == 0){
                     level = level + 50;
                 }else{
                     level = level + 55;
                 }                
+                $('#lvl').text(level);
             }
         } else {
-            //errououououuuu -Liga voz do Fausto Silvaa
-            //document.getElementById('status').innerHTML = 'Errou!';
-            // if (jogada <= 4) {
-            //     document.getElementById("status").innerHTML = "Baixa memória: entre 1 e 4!";
-            // } if (jogada >= 5 && jogada <= 8) {
-            //     document.getElementById("status").innerHTML = "Memória média: entre 5 e 8!";
-            // } if (jogada >= 9 && jogada <= 12) {
-            //     document.getElementById("status").innerHTML = "Memória alta: entre 9 e 12!";
-            // } if (jogada > 12) {
-            //     document.getElementById("status").innerHTML = "Memória ultra: maior que 13!";
-            // }
             PartidaGPF('PF');
             play2();
-            // ranking[ranking.length] = level - 1;
-            // ranking.sort(sortNumber);
-            // ranking.reverse();
-            //ranking.rsort();
-            // if (ranking.length > 0) {
-            //     document.getElementById('text1').innerHTML = ranking[0];
-            // }
-            // if (ranking.length > 1) {
-            //     document.getElementById('text2').innerHTML = ranking[1];
-            // }
-            // if (ranking.length > 2) {
-            //     document.getElementById('text3').innerHTML = ranking[2];
-            // }
             error();
         }
     }
 
 }
 
+function pausar(){
+    PartidaGPF('PF');
+    podeApertar = false;
+    estapausado = true;
+    setbuttons(2);
+    $("#facebook").show();
+}
+
+function reiniciar(){
+    error();
+    reiniciei = true;
+    PartidaGPF('R');
+    iniciar();    
+}
+
 function error() {
     podeApertar = false;
-    document.getElementById('btn').style.visibility = 'visible';
     ordem = [];
     jogada = 0;
     sequencia = 0;
     confere = 0;
     level = 0;
-
+    $('#lvl').text(level);
+    setbuttons(1);
+    $("#facebook").show();
 }
 function play2() {
     document.getElementById('audio2').play();
 }
 
+function setbuttons(tipset){
+    if(tipset == 1){
+        $('#iniciar').prop("disabled", false);
+        $('#pause').prop("disabled", true);
+        $('#reiniciar').prop("disabled", true); 
+    }else if(tipset == 2){
+        $('#iniciar').prop("disabled", false);
+        $('#pause').prop("disabled", true);
+        $('#reiniciar').prop("disabled", false); 
+    }else{
+        $('#iniciar').prop("disabled", true);
+        $('#pause').prop("disabled", false);
+        $('#reiniciar').prop("disabled", false); 
+    }
+}
+
 function executarSequencia() {
     if (sequencia < ordem.length) {
-        if (ordem[sequencia] == 1) {
+        if (ordem[sequencia] == 1 && estapausado == false) {
             DisparaQuadrado1();
         }
-        if (ordem[sequencia] == 2) {
+        if (ordem[sequencia] == 2 && estapausado == false) {
             DisparaQuadrado2();
         }
-        if (ordem[sequencia] == 3) {
+        if (ordem[sequencia] == 3 && estapausado == false) {
             DisparaQuadrado3();
         }
-        if (ordem[sequencia] == 4) {
+        if (ordem[sequencia] == 4 && estapausado == false) {
             DisparaQuadrado4();
         }
-        if (ordem[sequencia] == 5) {
+        if (ordem[sequencia] == 5 && estapausado == false) {
             DisparaQuadrado5();
         }
-        if (ordem[sequencia] == 6) {
+        if (ordem[sequencia] == 6 && estapausado == false) {
             DisparaQuadrado6();
         }
-        if (ordem[sequencia] == 7) {
+        if (ordem[sequencia] == 7 && estapausado == false) {
             DisparaQuadrado7();
         }
-        if (ordem[sequencia] == 8) {
+        if (ordem[sequencia] == 8 && estapausado == false) {
             DisparaQuadrado8();
         }
-        if (ordem[sequencia] == 9) {
+        if (ordem[sequencia] == 9 && estapausado == false) {
             DisparaQuadrado9();
         }
         sequencia = sequencia + 1;
@@ -199,108 +218,108 @@ function DisparaQuadrado1() {
     $("#quadrado1").css("background-color","#f8ffaa");
     document.getElementById('do').play();
     $("#quadrado1").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado1, 400);
+    setTimeout(VoltaQuadrado1, 300);
 }
 function DisparaQuadrado2() {
     $("#quadrado2").css("background-color","#cc5eff");
     document.getElementById('do').play();
     $("#quadrado2").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado2, 400);
+    setTimeout(VoltaQuadrado2, 300);
 }
 function DisparaQuadrado3() {
     $("#quadrado3").css("background-color","#907fff");
     document.getElementById('do').play();
     $("#quadrado3").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado3, 400);
+    setTimeout(VoltaQuadrado3, 300);
 }
 function DisparaQuadrado4() {
     $("#quadrado4").css("background-color","#61f9ba");
     document.getElementById('do').play();
     $("#quadrado4").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado4, 400);
+    setTimeout(VoltaQuadrado4, 300);
 }
 function DisparaQuadrado5() {
     $("#quadrado5").css("background-color","#ff6868");
     document.getElementById('do').play();
     $("#quadrado5").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado5, 400);
+    setTimeout(VoltaQuadrado5, 300);
 }
 function DisparaQuadrado6() {
     $("#quadrado6").css("background-color","#fffa7f");
     document.getElementById('do').play();
     $("#quadrado6").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado6, 400);
+    setTimeout(VoltaQuadrado6, 300);
 }
 function DisparaQuadrado7() {
     $("#quadrado7").css("background-color","#ef8453");
     document.getElementById('do').play();
     $("#quadrado7").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado7, 400);
+    setTimeout(VoltaQuadrado7, 300);
 }
 function DisparaQuadrado8() {
     $("#quadrado8").css("background-color","#82d0f2");
     document.getElementById('do').play();
     $("#quadrado8").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado8, 400);
+    setTimeout(VoltaQuadrado8, 300);
 }
 function DisparaQuadrado9() {
     $("#quadrado9").css("background-color","#83db69");
     document.getElementById('do').play();
     $("#quadrado9").css("boxShadow","0px 0px 50px #ffffff");
-    setTimeout(VoltaQuadrado9, 400);
+    setTimeout(VoltaQuadrado9, 300);
 }
 //Dispara cores
 //Volta cores
 function VoltaQuadrado1() {
-    $("#quadrado1").css("background-color","#f8ffaa");
+    $("#quadrado1").css("background-color","#e1ea7c");
     $("#quadrado1").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado2() {
-    $("#quadrado2").css("background-color","#cc5eff");
+    $("#quadrado2").css("background-color","#ab02f9");
     $("#quadrado2").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado3() {
-    $("#quadrado3").css("background-color","#907fff");
+    $("#quadrado3").css("background-color","#2200ff");
     $("#quadrado3").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado4() {
-    $("#quadrado4").css("background-color","#61f9ba");
+    $("#quadrado4").css("background-color","#12ea90");
     $("#quadrado4").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado5() {
-    $("#quadrado5").css("background-color","#ff6868");
+    $("#quadrado5").css("background-color","#ff0000");
     $("#quadrado5").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado6() {
-    $("#quadrado6").css("background-color","#fffa7f");
+    $("#quadrado6").css("background-color","#eae204");
     $("#quadrado6").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado7() {
-    $("#quadrado7").css("background-color","#ef8453");
+    $("#quadrado7").css("background-color","#ea4c04");
     $("#quadrado7").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado8() {
-    $("#quadrado8").css("background-color","#82d0f2");
+    $("#quadrado8").css("background-color","#04a5ea");
     $("#quadrado8").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
 }
 function VoltaQuadrado9() {
-    $("#quadrado9").css("background-color","#83db69");
+    $("#quadrado9").css("background-color","#30a50d");
     $("#quadrado9").css("boxShadow","0px 0px 0px #999999");
     //executarSequencia();
     setTimeout(sleep, 300);
@@ -311,9 +330,6 @@ function sleep() {
 }
 
 function play() {
-    au = document.getElementById('audio');
+    au = $('#audio')[0];
     au.play();
-}
-function sortNumber(a, b) {
-    return a - b;
 }

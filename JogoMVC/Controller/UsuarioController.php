@@ -44,7 +44,7 @@
                 }else{
                     $tiUsu = 'J';
                 }                
-                if (!empty($erros)) { //Se houve erros
+                if (!empty($erros['campos'])) { //Se houve erros
                     $form_data['success'] = false;
                     $form_data['erros'] = $erros;
                 }else{

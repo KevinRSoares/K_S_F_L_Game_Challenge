@@ -55,7 +55,7 @@
 	<head>
 		<?php include 'Views/header.php' ?>
 		<title>MEU GAME - <?php echo $titulo ?></title>
-		<script src="Content/js/<?php echo $script ?>.script.js"></script>
+		<script src="Content/js/<?php echo $script ?>.script.js"></script>        
 	</head>
 	<body>
         <div class="body">
@@ -67,6 +67,6 @@
         </div>
         <?php
             include 'Views/footer.php';
-        ?>        
+        ?>      
 	</body>
 </html>

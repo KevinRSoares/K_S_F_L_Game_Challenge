@@ -8,6 +8,8 @@
     $TipOpe = $_POST['TipOpe'];
     if($TipOpe == 'G'){
         $form_data = $aplicacao->GravaPartida($UsuCod);
+    }else if($TipOpe == 'R'){
+        $form_data = $aplicacao->ReiniciaPartida($ParCod);
     }else{
         $form_data = $aplicacao->FinalizaPausaPartida($ParCod,$ParPon);
     }

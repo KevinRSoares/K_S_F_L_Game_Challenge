@@ -46,7 +46,7 @@ $( document ).ready(function() {
 				if (response.erros.campos) {
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.campos + '</div>')
 					.fadeIn(5000).html();
-				}else if(!response.erros) {
+				}else{
 					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros + '</div>')
 					.fadeIn(5000).html();
 				}		

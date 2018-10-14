@@ -62,13 +62,35 @@
                         $Partida->PartidaP = $row["CoPar"];
                     }
                     $form_data["Partida"] = $Partida;
-                    echo json_encode($Partida);
                 } 
                 else
                 {
                     $form_data['success'] = false;
                     $form_data['erros']  = $erros;
                 }
+            }            
+            $conn->close();	
+
+            echo json_encode($form_data);
+            die();
+        }        
+        public function ReiniciaPartida($ParCod){
+            $connection = new Connection();
+            $conn = $connection->getConn();
+            $Partida = new Partida();
+            //$sql = "";
+            $sql = "call Reinicia_Partida(?)";
+            //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('i', $ParCod);
+            
+            $stmt->execute();
+            if ($stmt->error) {
+                $form_data['success'] = false;
+                $form_data['erros']  = $erros; 
+                
+            } else {
+                $form_data['success'] = true;
             }            
             $conn->close();	
 
