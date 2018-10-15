@@ -29,29 +29,22 @@
         </div>
         <div class="logs  card-body">
           <div class="form-row" id='tabelaB'>
-            <table class='table' id='tabelaA'></table>
+            <table class='table' id='tableData'></table>
            
-            <div class="pagination">
+            <div class="pagination" id='paginacao'>
                 <nav aria-label="Navegação de página exemplo"> 
                     <ul class="pagination"> 
                         <li class="page-item">     
                         <a class="page-link" href="#" aria-label="Anterior">    
-                            <span aria-hidden"true">&laquo;</span>    
+                            <span aria-hidden="true">&laquo;</span>    
                             <span class="sr-only">Anterior</span>  
                         </a>  
                         </li> 
-                        <li class="page-item">
-                        <a class="page-link" href="#">1</a>
-                        </li>   
-                        <li class="page-item"><a class="page-link" href="#">2</a>
-                        </li>    
-                        <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                        </li>    <li class="page-item">   
-                        <a class="page-link" href="#" aria-label="Próximo">   
-                            <span aria-hidden="true">&raquo;</span>     
-                            <span class="sr-only">Próximo</span>   
-                        </a> 
+                        <li class="page-item">   
+                          <a class="page-link" href="#" aria-label="Próximo">   
+                              <span aria-hidden="true">&raquo;</span>     
+                              <span class="sr-only">Próximo</span>   
+                          </a> 
                         </li> 
                     </ul>
                 </nav>

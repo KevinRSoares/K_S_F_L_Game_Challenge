@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 	// Variável para guardar o request
 	var request;
+	$('#paginacao').hide();
+	
 
 	// Bind da função de submit do nosso formulário
 	$("#formPesquisa").submit(function(event){
@@ -40,24 +42,18 @@ $( document ).ready(function() {
 		request.done(function (response, textStatus, jqXHR){
 			var response = $.parseJSON(response);
 			if (!response.success) { //Se deu alguma mensagem de erro
-				if (response.erros.email) {
-					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros.email + '</div>')
+				if (response.erros) {
+					$('#divMensagem').append('<div class="alert alert-danger" role="alert">' + response.erros+ '</div>')
 					.fadeIn(1000).html();
 				}
 			}
 			else {
 				console.log(response);
+				$("#tableData").empty();
+				k = 0;
 				for (i in response.Admin) {
-					if(i<9){
-						$('#tabelaA').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
-					}
-				}	
-				$('#tabelaB').append('');	
-				// <tr>
-                //     <td class="col-3 text-left">Teste</td>
-                //     <td class="col-2">Teste</td>
-                //     <td class="col-2 text-right">Teste</td>
-                // </tr>		
+					$('#tableData').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
+				}	 	
 			}
 		});
 
