@@ -52,7 +52,9 @@ $( document ).ready(function() {
 				$("#tableData").empty();
 				k = 0;
 				for (i in response.Admin) {
-					$('#tableData').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
+					if(i <= 9){
+						$('#tableData').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
+					}
 				}	 	
 			}
 		});
