@@ -8,10 +8,11 @@ var ranking = [];
 var request;
 var Partida = 0;
 var CodPar = 0;
+var level = 0;
 jogada = 0;
 sequencia = 0;
 confere = 0;
-level = 0;
+pontuacao = 0;
 podeApertar = false;
 estapausado = false;
 reiniciei = false;
@@ -19,6 +20,7 @@ reiniciei = false;
 function iniciar() {
     setbuttons(0);   
     podeApertar = false;
+    $('#Status').text('...');
     
     if(estapausado == false && reiniciei == false){
         PartidaGPF('G');
@@ -43,7 +45,7 @@ function PartidaGPF(tipOpe){
     if (request) {
         request.abort();
     }
-    var serializedData = "&UsuCod="+$("#CodUsu").text()+"&ParPon="+level+"&CodPar="+CodPar+"&TipOpe="+tipOpe;
+    var serializedData = "&UsuCod="+$("#CodUsu").text()+"&ParPon="+pontuacao+"&CodPar="+CodPar+"&TipOpe="+tipOpe;
     request = $.ajax({
         url: "Controller/PartidaController.php",
         type: "post",
@@ -105,16 +107,18 @@ function apertou(nrCor) {
                 play();
                 setTimeout(iniciar, 1400);
                 if(nrCor%2 == 0){
-                    level = level + 50;
+                    pontuacao = pontuacao + 50;
                 }else{
-                    level = level + 55;
-                }                
-                $('#lvl').text(level);
+                    pontuacao = pontuacao + 55;
+                } 
+                level++;               
+                $('#lvl').text(pontuacao);
+                $('#level').text('Nível: '+level);
             }
         } else {
             PartidaGPF('PF');
             play2();
-            error();
+            error('F');
         }
     }
 
@@ -126,13 +130,16 @@ function pausar(){
     estapausado = true;
     setbuttons(2);
     $("#facebook").show();
+    $('#status').text('Clique em iniciar para voltar a jogar!');
 }
 
 function reiniciar(){
     error();
     reiniciei = true;
     PartidaGPF('R');
-    iniciar();    
+    iniciar(); 
+    $('#status').text('...'); 
+      
 }
 
 function error() {
@@ -141,8 +148,12 @@ function error() {
     jogada = 0;
     sequencia = 0;
     confere = 0;
+    pontuacao = 0;
     level = 0;
-    $('#lvl').text(level);
+    $('#lvl').text(pontuacao);
+    $('#level').text('Nível: '+level);
+    $('#status').text('Perdeu, inicie novamente!');
+    
     setbuttons(1);
     $("#facebook").show();
 }

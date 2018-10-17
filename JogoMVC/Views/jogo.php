@@ -8,7 +8,7 @@
 					<button id='iniciar' class="btn-outline-light btnComando"  onclick="iniciar()" alt="Botão Iniciar" title="Clique aqui para iniciar um novo jogo">Iniciar</button>
 					<button id='pause' class="btn-outline-light btnComando" onclick="pausar()" alt="Botão Pausar" title="Clique aqui para pausar o jogo">Pausar</button>
 					<button id='reiniciar' class="btn-outline-light btnComando" onclick="reiniciar()" alt="Botão Reiniciar" title="Clique aqui para reiniciar o jogo">Reiniciar</button>
-				
+					<h2 id='level'>Nível: 0 </h2>
 					<h2 id='status'>....</h2>
 					<div id='facebook'>
 						<div  class="fb-share-button compartilhar" data-href="COLOCAR LINK DO NOSSO SITE" data-layout="button" data-size="large" data-mobile-iframe="false">
