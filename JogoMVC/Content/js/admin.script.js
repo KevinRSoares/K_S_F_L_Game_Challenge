@@ -55,7 +55,8 @@ $( document ).ready(function() {
 					if(i <= 9){
 						$('#tableData').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
 					}
-				}	 	
+					
+				}	
 			}
 		});
 
