@@ -23,11 +23,13 @@
     $admLog->TipLogA = $_POST['selectTipo'];
     
     $form_data = $aplicacao->BuscaLog($admLog);
+  echo $form_data;
+  die();
+    /*if (!empty($erros)) { //Se houve erros
 
-    if (!empty($erros)) { //Se houve erros
 		$form_data['success'] = false;
 		$form_data['erros']  = $erros;
-    }
+    }*/
     
     echo json_encode($form_data);
 ?>
