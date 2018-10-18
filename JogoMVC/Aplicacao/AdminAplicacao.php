@@ -21,14 +21,12 @@
                     while($row = $result->fetch_assoc()) {   
                         $adm = new Admin();                        
                         $form_data['success'] = true;
-                        $adm->DescA = str_replace(":","",$row["DescricaoLog"]);
+                        $adm->DescA = $row["DescricaoLog"];
                         $adm->DtLogIniA = date('d/m/Y', strtotime($row["DthorLog"]));
                         $adm->TipLogA = $row["TipoLog"];
                         array_push($admVetor,$adm);
                         $i++;
-
                     }
-                    
                     $form_data['admin'] = $admVetor;
                 }else{
                     $form_data['success'] = false;
@@ -38,8 +36,8 @@
             }
             $conn->close();	
             echo json_encode($form_data);
-             //print_r($admVetor) ;
-            die();
+            //print_r($admVetor) ;
+           die();
         }
     }  
 ?>

@@ -48,11 +48,10 @@ $( document ).ready(function() {
 				console.log(response);
 				$("#tableData").empty();
 				k = 0;
-				for (i in response.Admin) {
-					if(i <= 9){
-						$('#tableData').append('<tr><td class="col-3 ">' + response.Admin[i].DescA + '</td><td class="col-3">' + response.Admin[i].DtLogIniA + '</td><td class="col-3">' + response.Admin[i].TipLogA + '</td></tr>');
-					}
+				for (i in response.admin) {
+					$('#tableData').append('<tr><td class="col-3 ">' + response.admin[i].DescA + '</td><td class="col-3">' + response.admin[i].DtLogIniA + '</td><td class="col-3">' + response.admin[i].TipLogA + '</td></tr>');
 				}	 	
+				$("#tableData").DataTable();
 			}
 		});
 
