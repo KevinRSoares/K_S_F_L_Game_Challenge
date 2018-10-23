@@ -56,7 +56,7 @@ $( document ).ready(function() {
 				for (i in response.admin) {
 					$('#tableData').append('<tr><td class="col-3 ">' + response.admin[i].DescA + '</td><td class="col-3">' + response.admin[i].DtLogIniA + '</td><td class="col-3">' + response.admin[i].TipLogA + '</td></tr>');
 				}	 	
-				//$("#tableData").DataTable();
+				$("#tableData").DataTable();
 			}
 		});
 
