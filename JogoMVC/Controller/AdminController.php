@@ -15,21 +15,21 @@
     //inputDescricao
     //inputDataIni
     //inputDataFim
-    //selectTipo               
-    $admLog = new Admin();
-    $admLog->DescA = $_POST['inputDescricao'];
-    $admLog->DtLogIniA = $_POST['inputDataIni'];
-    $admLog->DtLogFimA = $_POST['inputDataFim'];
-    $admLog->TipLogA = $_POST['selectTipo'];
+    //selectTipo  
+    if($_POST['inputDataIni'] > $_POST['inputDataFim']){
+      $form_data['success'] = false;
+      $form_data['erros']  = 'Data de Inicio deve ser menor ou igual a Data Final!!!';
+    } else {
+      $admLog = new Admin();
+      $admLog->DescA = $_POST['inputDescricao'];
+      $admLog->DtLogIniA = $_POST['inputDataIni'];
+      $admLog->DtLogFimA = $_POST['inputDataFim'];
+      $admLog->TipLogA = $_POST['selectTipo'];
+      
+      $form_data = $aplicacao->BuscaLog($admLog);
+    }            
     
-    $form_data = $aplicacao->BuscaLog($admLog);
-  echo $form_data;
-  die();
-    /*if (!empty($erros)) { //Se houve erros
-
-		$form_data['success'] = false;
-		$form_data['erros']  = $erros;
-    }*/
-    
+    echo $form_data;
+    die();    
     echo json_encode($form_data);
 ?>

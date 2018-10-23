@@ -7,7 +7,17 @@
             $conn = $connection->getConn();
             $admVetor = [];
             $adm = new Admin();                                 
-            $sql = 'Select * From relatoriolog';
+            $sql = "Select * From relatoriolog Where DescricaoLog Like '%".$admLog->DescA."%'";
+            if (!empty($admLog->DtLogIniA)){
+                $sql = $sql." and DthorLog >= '".$admLog->DtLogIniA." 00:00:00'";
+            }
+            if (!empty($admLog->DtLogFimA)){
+                $sql = $sql." and DthorLog <= '".$admLog->DtLogFimA." 23:59:00'";
+            }          
+            if ($admLog->TipLogA != 'T'){
+                $sql = $sql." and TipoLog = '".$admLog->TipLogA."'";
+            }
+            
             //Select CodUsu,EmaUsu ,NomUsu , SenUsu ,TipUsu from usuario Where EmaUsu = ? and SenUsu = md5(?)
             $stmt = $conn->prepare($sql);
             $stmt->execute();
@@ -36,8 +46,7 @@
             }
             $conn->close();	
             echo json_encode($form_data);
-            //print_r($admVetor) ;
-           die();
+            die();
         }
     }  
 ?>

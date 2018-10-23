@@ -42,7 +42,11 @@ $( document ).ready(function() {
 		request.done(function (response, textStatus, jqXHR){
 			var response = $.parseJSON(response);
 			if (!response.success) { //Se deu alguma mensagem de erro
-				$('#tableData').append('<tr><td>Erro ao Buscar Dados!!!</td></tr>');
+				if(response.erros){
+					$('#tableData').append('<tr><td>'+response.erros+'</td></tr>');
+				}else{
+					$('#tableData').append('<tr><td>Erro ao Buscar Dados!!!</td></tr>');
+				}
 			}
 			else {
 				console.log(response);
@@ -51,7 +55,7 @@ $( document ).ready(function() {
 				for (i in response.admin) {
 					$('#tableData').append('<tr><td class="col-3 ">' + response.admin[i].DescA + '</td><td class="col-3">' + response.admin[i].DtLogIniA + '</td><td class="col-3">' + response.admin[i].TipLogA + '</td></tr>');
 				}	 	
-				$("#tableData").DataTable();
+				//$("#tableData").DataTable();
 			}
 		});
 
