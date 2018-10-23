@@ -42,6 +42,7 @@ $( document ).ready(function() {
 		request.done(function (response, textStatus, jqXHR){
 			var response = $.parseJSON(response);
 			if (!response.success) { //Se deu alguma mensagem de erro
+				$("#tableData").empty();
 				if(response.erros){
 					$('#tableData').append('<tr><td>'+response.erros+'</td></tr>');
 				}else{
