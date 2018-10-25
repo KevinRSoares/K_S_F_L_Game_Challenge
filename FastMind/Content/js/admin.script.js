@@ -1,0 +1,76 @@
+$( document ).ready(function() {
+	// Variável para guardar o request
+	var request;
+	$('#paginacao').hide();
+	
+
+	// Bind da função de submit do nosso formulário
+	$("#formPesquisa").submit(function(event){
+
+		//Não deixa que o POST default seja acionado
+		event.preventDefault();
+
+		//Cancelando qualquer request pendente
+		if (request) {
+			request.abort();
+		}
+		
+		//Limpo as mensagens
+		$("#divMensagem").empty();
+		
+		//variáveis locais
+		var $form = $(this);
+
+		//Vamos selecionar e armazenar todos os cmapos do formulário para operações com eles
+		var $inputs = $form.find("input, select, button, textarea");
+
+		//Vamos serializar o formulário
+		var serializedData = $form.serialize();
+
+		//Vamos desabilitar os inputs durante a requisição para não deicar mandar várias seguidas
+		// OBS: N[os desabilitamos os campos depois de serializar os dados
+		$inputs.prop("disabled", true);
+
+		//Vamos mandar a requisição
+		request = $.ajax({
+			url: "Controller/AdminController.php",
+			type: "post",
+			data: serializedData
+		});
+
+		// Callback para ser chamado quando ocorre o sucesso
+		request.done(function (response, textStatus, jqXHR){
+			var response = $.parseJSON(response);
+			if (!response.success) { //Se deu alguma mensagem de erro
+				$("#tableData").empty();
+				if(response.erros){
+					$('#tableData').append('<tr><td>'+response.erros+'</td></tr>');
+				}else{
+					$('#tableData').append('<tr><td>Erro ao Buscar Dados!!!</td></tr>');
+				}
+			}
+			else {
+				console.log(response);
+				$("#tableData").empty();
+				k = 0;
+				for (i in response.admin) {
+					$('#tableData').append('<tr><td class="col-3 ">' + response.admin[i].DescA + '</td><td class="col-3">' + response.admin[i].DtLogIniA + '</td><td class="col-3">' + response.admin[i].TipLogA + '</td></tr>');
+				}	 	
+				$("#tableData").DataTable();
+			}
+		});
+
+		// Callback para ser chamado em caso de falha
+		request.fail(function (jqXHR, textStatus, errorThrown){
+			$('#divMensagem').append('<div class="alert alert-danger" role="alert">Erro ao buscar os dados</div>')
+					.fadeIn(1000).html();
+		});
+
+		// Callback que será chamado sempre depois da requisição (mesmo que ocorra falaha ou sucesso)
+		request.always(function () {
+			//Habilitamos os campos
+			$inputs.prop("disabled", false);
+		});
+
+	});
+});

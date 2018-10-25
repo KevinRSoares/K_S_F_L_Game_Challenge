@@ -1,0 +1,119 @@
+body{
+    background-color: #6f0a90;
+}
+
+.card-body
+{
+    padding: 0.4rem;
+    font-size: 1.5rem;
+}
+.container
+{
+    padding: 0.5rem;
+    margin: 0% 1% 0% 1%;
+}
+
+.tabuleiro
+{
+    background-color: #3e094f;
+    width: 735px;
+    height: 555px;
+    border-radius: 1rem;
+    padding: 2% 3% 3% 2%;
+}
+.btn
+{
+    width: 220px;
+    height: 160px;
+    
+}
+.col-lg-4{
+    margin: 0% 0% 3% 0%;
+}
+.btnComando{
+    font-weight: bold;
+    margin: 2% 2% 5% 7%;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid white;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out;
+    background-color: #3e094f;
+    border-color: .15s ease-in-out;
+    box-shadow: .15s ease-in-out;
+}
+
+
+.placar{
+    background-color:#3e094f;
+    color: rgb(255, 251, 251);
+    position: absolute;
+    width: 350px;
+    bottom: 70px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.text{
+    text-align: center;
+    font-family: 'Verdana';
+}
+
+.quadrado1{
+    background-color: #e1ea7c;
+    border-color: #e1ea7c;
+}
+
+.quadrado2{
+    background-color: #ab02f9;
+    border-color: #ab02f9;
+}
+.quadrado3{
+    background-color: #2200ff;
+    border-color: #2200ff;
+}
+.quadrado4{
+    background-color: #12ea90;
+    border-color: #12ea90;
+}
+.quadrado5{
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+.quadrado6{
+    background-color: #eae204;
+    border-color: #eae204;
+}
+.quadrado7{
+    background-color: #ea4c04;
+    border-color: #ea4c04;
+}
+
+.quadrado8{
+    background-color: #04a5ea;
+    border-color: #04a5ea;
+}
+.quadrado9{
+    background-color: #30a50d;
+    border-color: #30a50d;
+}
+
+
+/*
+
+#12ea90
+#ab02f9
+#2200ff
+#a8010a
+#30a50d
+#eae204
+#ea4c04
+#04a5ea
+#ff0000
+*/
